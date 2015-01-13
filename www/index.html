@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>Envenenado</title>
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="jquery.mobile-1.4.4.css">
+		<link rel="stylesheet" href="css/style.css">
+	</head>
+
+	<body id="body-general">
+
+
+				<!-- panel -->
+				<div data-role="panel" id="ev-main-panel" data-display="overlay">
+					<div  class="centrar">
+						<a href="#" data-transition="none" onclick="ev_env_panelButton('ev-portada')"><img src="img/logo-menu.png" class="logo-menu"></a>
+					</div>					
+					<a href="#" data-transition="none" onclick="ev_env_panelButton('ev-pj')"><img src="img/btn-pj.png" class="logo-menu"></a><br />
+					<a href="#" data-transition="none" onclick="ev_env_panelButton('ev-daga-tripulacion')"><img src="img/btn-laDaga.png" class="logo-menu"></a><br />
+					<a href="#" data-transition="none" onclick="ev_env_panelButton('ev-enemigos')"><img src="img/btn-enemigos.png" class="logo-menu"></a>
+					<a href="#" data-transition="none" onclick="ev_env_panelButton('ev-adquirir')"><img src="img/btn-adquirirjuego.png" class="logo-menu"></a>
+					<a href="#" data-transition="none" onclick="ev_env_panelButton('ev-apoyo')"><img src="img/btn-apoyo.png" class="logo-menu"></a>
+				</div>
+
+
+
+
+		<!-- ########  PORTADA  ######## -->
+		<div data-role="page" id="ev-portada" data-theme="r">
+				<!-- header -->
+				<div data-role="header">
+					<a href="#ev-main-panel" class="ui-btn ui-btn-inline ui-icon-bars ui-btn-icon-notext ui-corner-all ui-shadow ">panel</a>
+				</div>
+				<!-- main -->
+				<div data-role="main" class="ui-content">
+					<div id="logo-portada" class="centrar">
+					<a class="ui-link" href="#ev-main-panel" ><img src="img/logo-envenenado-white.png" class="img-ancho-completo-top"></a> 
+					</div>
+					<h2>Ayuda para la creaci&oacute;n de personajes, enemigos, barcos, tripulaciones y fortalezas.</h2>
+					<div class="centrar">
+					<a class="ui-link" href="http://jagvalverde.com" ><img src="img/logo-estudio-jv.png" class="img-ancho-completo"></a> 
+					</div>
+
+					<h2>Colaboran</h2>
+					<div class="centrar">
+					<a class="ui-link" href="" ><img src="img/logo-rolgratis.png" class="portada-btn"></a> 	<a class="ui-link" href="" ><img src="img/logo-summum.png" class="portada-btn"></a> <a class="ui-link" href="" ><img src="img/logo-tesoros.png" class="portada-btn"></a> <a class="ui-link" href="" ><img src="img/logo--dracotienda.png" class="portada-btn"></a> 
+					</div>
+
+
+					<h2>Gracias a</h2>
+					<p id="ev-envenenados-lista-patrones">
+						Lorem ipsum, dolor sit, amet, consectetur, adipiscing elit, Ut gravida, nec justo, nec, placerat, Mauris molestie ,malesuada turpis, vel euismod, tellus, tincidunt, tristique, Nunc, at leo sed, nunc, aliquet, cursus, sit amet, vitae, dui, Nam erat, enim, finibus, pellentesque y faucibus. 
+					</p>
+
+
+
+					<div class="centrar">
+					<img src="img/aviso.png" class="img-ancho-completo">
+					</div>
+				</div>
+				<!-- footer -->
+		<!--	<div data-role="footer">
+				</div>
+		-->
+		</div>
+
+
+
+
+		<!-- ######## PJ ######## -->
+		<div data-role="page" id="ev-pj" data-theme="r"> 
+				<!-- header -->
+				<div data-role="header">					
+					<a href="#ev-main-panel" class="ui-btn ui-btn-inline ui-icon-bars ui-btn-icon-notext ui-corner-all ui-shadow">panel</a>
+				</div>
+				<!-- main -->
+				<div data-role="main" class="ui-content centrar">
+					<div id="logo-portada" class="centrar">
+						<a class="ui-link" href="#ev-main-panel" >
+						<img src="img/btn-pj.png" class="img-ancho-completo-top-generador"></a>
+					</div>
+					<!-- nombre -->
+					<div data-role="fieldcontain">
+						<h2>Nombre</h2>
+						<div class="label">Escribe el nombre por el que es conocido tu pirata.</div>
+						<input type="text" name="ev-pj-form-nombre" />
+					</div>
+					<!-- cargo -->
+					<div data-role="fieldcontain">
+						<h2>Cargo</h2>
+						<div class="label">Elije el cargo de tu personaje bajo el mando de Azufre Jack.</div>
+						<select name="ev-pj-form-cargo">
+							<option value="Contramaestre">Contramaestre</option>
+							<option value="Grumete">Grumete</option>
+							<option value="Carpintero">Carpintero</option>
+							<option value="Artillero mayor">Artillero mayor</option>
+							<option value="Oficial de intendencia">Oficial de intendencia</option>
+							<option value="Navegante">Navegante</option>
+							<option value="Marinero">Marinero</option>
+							<option value="Cirujano">Cirujano</option>
+						</select>
+					</div>
+					<!-- segundo a cargo -->
+					<div data-role="fieldcontain">
+						<label for="ev-pj-form-segundoacargo">Segundo al cargo.</label>
+						<input type="checkbox" name="ev-pj-form-segundoacargo" id="ev-pj-form-segundoacargo" value="segundo al cargo" class="custom"/>
+					</div>
+					<!-- pecados -->
+					<div data-role="fieldcontain">
+						<h2>Pecados</h2>
+						<div class="label">&#191;Cu&aacute;les ha cometido tu personaje? Elige uno, algunos, todos o ninguno.</div>
+						
+						<div class="label">Puedes contar dos veces un mismo pecado si tu personaje lo ha cometido de forma prolongada, constante, excesiva, sin remordimientos y a&uacute;n hoy contin&uacute;a haci&eacute;ndolo.</div>
+						
+						<div>
+							<div class="doble-check"><div id="ev-pj-form-pecados-adulterio" class="ev-double-checkbox ev-double-checkbox-pecados-0">Adulterio</div></div>
+							<div class="doble-check"><div id="ev-pj-form-pecados-asesinato" class="ev-double-checkbox ev-double-checkbox-pecados-0">Asesinato</div></div>
+							<div class="doble-check"><div id="ev-pj-form-pecados-blasfemia" class="ev-double-checkbox ev-double-checkbox-pecados-0">Blasfemia</div></div>
+							<div class="doble-check"><div id="ev-pj-form-pecados-idolatria" class="ev-double-checkbox ev-double-checkbox-pecados-0">Idolatr&iacute;a</div></div>
+							<div class="doble-check"><div id="ev-pj-form-pecados-motin" class="ev-double-checkbox ev-double-checkbox-pecados-0">Mot&iacute;n</div></div>
+							<div class="doble-check"><div id="ev-pj-form-pecados-robo" class="ev-double-checkbox ev-double-checkbox-pecados-0">Robo</div></div>
+							<div class="doble-check"><div id="ev-pj-form-pecados-sodomia" class="ev-double-checkbox ev-double-checkbox-pecados-0">Sodom&iacute;a</div></div>
+							<div class="doble-check"><div id="ev-pj-form-pecados-violacion" class="ev-double-checkbox ev-double-checkbox-pecados-0">Violaci&oacute;n</div></div>
+							
+						</div>
+					</div>
+					<!-- infortunios -->
+					<div data-role="fieldcontain">
+						<h2>Infortunios</h2>
+						<div class="label">&#191;Cu&aacute;les ha cometido tu personaje? Elige uno, algunos, todos o ninguno.</div>
+						<div class="label">Marca con una X (pulsando dos veces) aquellas que tu personaje sufri&oacute; a manos del Capit&aacute;n Azufre Jack.</div>
+						<div class="doble-check"><div id="ev-pj-form-infortunios-arrestado" class="ev-double-checkbox ev-double-checkbox-infortunios-0">Arrestado</div></div>
+						<div class="doble-check"><div id="ev-pj-form-infortunios-condenado" class="ev-double-checkbox ev-double-checkbox-infortunios-0">Condenado</div></div>
+						<div class="doble-check"><div id="ev-pj-form-infortunios-encarcelado" class="ev-double-checkbox ev-double-checkbox-infortunios-0">Encarcelado</div></div>
+						<div class="doble-check"><div id="ev-pj-form-infortunios-intentodeasesinato" class="ev-double-checkbox ev-double-checkbox-infortunios-0">Intento de asesinato</div></div>
+						<div class="doble-check"><div id="ev-pj-form-infortunios-latigazos" class="ev-double-checkbox ev-double-checkbox-infortunios-0">Latigazos</div></div>
+						<div class="doble-check"><div id="ev-pj-form-infortunios-maldito" class="ev-double-checkbox ev-double-checkbox-infortunios-0">Maldito</div></div>
+						<div class="doble-check"><div id="ev-pj-form-infortunios-marcado" class="ev-double-checkbox ev-double-checkbox-infortunios-0">Marcado</div></div>
+						<div class="doble-check"><div id="ev-pj-form-infortunios-mutilado" class="ev-double-checkbox ev-double-checkbox-infortunios-0">Mutilado</div></div>
+						<div class="doble-check"><div id="ev-pj-form-infortunios-paliza" class="ev-double-checkbox ev-double-checkbox-infortunios-0">Paliza</div></div>
+						<div class="doble-check"><div id="ev-pj-form-infortunios-repudiado" class="ev-double-checkbox ev-double-checkbox-infortunios-0">Repudiado</div></div>
+						<div class="doble-check"><div id="ev-pj-form-infortunios-reclutadoalafuerza" class="ev-double-checkbox ev-double-checkbox-infortunios-0">Reclutado a la fuerza</div></div>
+						<div class="doble-check"><div id="ev-pj-form-infortunios-torturado" class="ev-double-checkbox ev-double-checkbox-infortunios-0">Torturado</div></div>
+						<div class="doble-check"><div id="ev-pj-form-infortunios-violado" class="ev-double-checkbox ev-double-checkbox-infortunios-0">Violado</div></div>
+					</div>
+					
+					<!-- ambiciones -->
+					<div>
+						<h2>Ambiciones</h2>
+						<div class="label">&#191;Cu&aacute;les dan fuerza a tu personaje? Elige alguna, todas... pero al menos una.</div>
+						<div>
+							<div data-role="fieldcontain">
+						<!--	<legend>Ambiciones:</legend>	-->
+								<input type="checkbox" name="ev-pj-form-ambiciones-sercapitan" id="ev-pj-form-ambiciones-sercapitan" value="ser capit&aacute;n" class="custom" />
+								<label for="ev-pj-form-ambiciones-sercapitan">Ser capit&aacute;n.</label>
+								<input type="checkbox" name="ev-pj-form-ambiciones-tenertierras" id="ev-pj-form-ambiciones-tenertierras" value="tener tierras" class="custom" />
+								<label for="ev-pj-form-ambiciones-tenertierras">Tener tierras.</label>
+								<input type="checkbox" name="ev-pj-form-ambiciones-serperdonado" id="ev-pj-form-ambiciones-serperdonado" value="ser perdonado" class="custom" />
+								<label for="ev-pj-form-ambiciones-serperdonado">Ser perdonado.</label>
+								<input type="checkbox" name="ev-pj-form-ambiciones-vivirparasiempre" id="ev-pj-form-ambiciones-vivirparasiempre" value="vivir para siempre" class="custom" />
+								<label for="ev-pj-form-ambiciones-vivirparasiempre">Vivir para siempre.</label>
+								<input type="checkbox" name="ev-pj-form-ambiciones-serrecordadoparasiempre" id="ev-pj-form-ambiciones-serrecordadoparasiempre" value="ser recordado para siempre" class="custom" />
+								<label for="ev-pj-form-ambiciones-serrecordadoparasiempre">Ser recordado para siempre.</label>
+								<input type="checkbox" name="ev-pj-form-ambiciones-seradmiradoporlasociedad" id="ev-pj-form-ambiciones-seradmiradoporlasociedad" value="ser admirado por la sociedad" class="custom" />
+								<label for="ev-pj-form-ambiciones-seradmiradoporlasociedad">Ser admirado por la sociedad.</label>
+								<input type="checkbox" name="ev-pj-form-ambiciones-vengarsedealguien" id="ev-pj-form-ambiciones-vengarsedealguien" value="vengarse de alguien" class="custom" />
+								<label for="ev-pj-form-ambiciones-vengarsedealguien">Vengarse de alguien.</label>
+								<input type="checkbox" name="ev-pj-form-ambiciones-vengarsedealguiendemejorposicion" id="ev-pj-form-ambiciones-vengarsedealguiendemejorposicion" value="vengarse de alguien de mejor posici%oacute;n" class="custom" />
+								<label for="ev-pj-form-ambiciones-vengarsedealguiendemejorposicion">Vengarse de alguien de mejor posici&oacute;n.</label>
+								<input type="checkbox" name="ev-pj-form-ambiciones-fornicarconelpiratadeotrojugador" id="ev-pj-form-ambiciones-fornicarconelpiratadeotrojugador" value="fornicar con el pirata de otro jugador" class="custom" />
+								<label for="ev-pj-form-ambiciones-fornicarconelpiratadeotrojugador">Fornicar con el pirata de otro jugador.</label>
+								<input type="checkbox" name="ev-pj-form-ambiciones-fornicarconhijaohijodealguiendemejorposicion" id="ev-pj-form-ambiciones-fornicarconhijaohijodealguiendemejorposicion" value="fornicar con hija o hijo de alguien de mejor posici&oacute;n" class="custom" />
+								<label for="ev-pj-form-ambiciones-fornicarconhijaohijodealguiendemejorposicion">Fornicar con hija o hijo de alguien de mejor posici&oacute;n.</label>
+								<input type="checkbox" name="ev-pj-form-ambiciones-escupiralacaradedios" id="ev-pj-form-ambiciones-escupiralacaradedios" value="escupir a la cara de dios" class="custom" />
+								<label for="ev-pj-form-ambiciones-escupiralacaradedios">Escupir a la cara de Dios.</label>
+								<input type="checkbox" name="ev-pj-form-ambiciones-escupiralacaradeldiablo" id="ev-pj-form-ambiciones-escupiralacaradeldiablo" value="escupir a la cara del diablo" class="custom" />
+								<label for="ev-pj-form-ambiciones-escupiralacaradeldiablo">Escupir a la cara del Diablo.</label>
+							</div>
+						</div>
+					</div>
+					<!-- perfil -->
+					<div>
+						<h2>Perfil</h2>
+						<div data-role="fieldcontain">
+							<legend class="label">Posees cualquier combinaci&oacute;n de:</legend>
+							<input type="checkbox" name="ev-pj-form-perfil-cuchillo" id="ev-pj-form-perfil-cuchillo" value="cuchillo (largo y mellado)" class="custom" />
+							<label for="ev-pj-form-perfil-cuchillo">Cuchillo (largo y mellado)</label>
+							<input type="checkbox" name="ev-pj-form-perfil-espada" id="ev-pj-form-perfil-espada" value="espada" class="custom" />
+							<label for="ev-pj-form-perfil-espada">Espada</label>
+							<input type="checkbox" name="ev-pj-form-perfil-pistola" id="ev-pj-form-perfil-pistola" value="pistola" class="custom" />
+							<label for="ev-pj-form-perfil-pistola">Pistola</label>
+							<legend class="label">Adem&aacute;s de eso, &#191;cu&aacute;les de las siguientes armas tiene tu personaje a mano? Puedes elegir dos como m&aacute;ximo.</legend>
+							<select name="ev-pj-form-perfil-select1">
+								<option value="">Nada</option>
+								<option value="una segunda espada para la mano libre seg&uacute;n el uso de los florentinos">Una segunda espada, para la mano libre, seg&uacute;n el uso de los florentinos</option>
+								<option value="una bandolera con dos pistolas">Una bandolera con dos pistolas</option>
+								<option value="un arma de mano distintiva como un hacha, una porra, un l&aacute;tigo o el martillo de un herrero">Un arma de mano distintiva como un hacha, una porra, un l&aacute;tigo o el martillo de un herrero</option>
+								<option value="un largo mosquete de tirador">Un largo mosquete de tirador</option>
+								<option value="granadas">Granadas</option>
+								<option value="tu pirata es descomunalmente fuerte con pu&ntilde;os como enormes rocas">No es un arma, pero tu pirata es descomunalmente fuerte, con puños como enormes rocas</option>
+								<option value="los tatuajes y la apariencia salvaje de tu pirata intimidan de por s&iacute;">No es un arma, pero los tatuajes y la apariencia salvaje de tu pirata intimidan de por sí</option>
+								<option value="tu pirata es ligero, asombrosamente r&aacute;pido, fibroso y cruel">No es un arma, pero tu pirata es ligero, asombrosamente r&aacute;pido, fibroso y cruel</option>
+							</select>
+							<select name="ev-pj-form-perfil-select2">
+								<option value="">Nada</option>
+								<option value="una segunda espada para la mano libre seg&uacute;n el uso de los florentinos">Una segunda espada, para la mano libre, seg&uacute;n el uso de los florentinos</option>
+								<option value="una bandolera con dos pistolas">Una bandolera con dos pistolas</option>
+								<option value="un arma de mano distintiva como un hacha, una porra, un l&aacute;tigo o el martillo de un herrero">Un arma de mano distintiva como un hacha, una porra, un l&aacute;tigo o el martillo de un herrero</option>
+								<option value="un largo mosquete de tirador">Un largo mosquete de tirador</option>
+								<option value="granadas">Granadas</option>
+								<option value="tu pirata es descomunalmente fuerte con pu&ntilde;os como enormes rocas">No es un arma, pero tu pirata es descomunalmente fuerte, con puños como enormes rocas</option>
+								<option value="los tatuajes y la apariencia salvaje de tu pirata intimidan de por s&iacute;">No es un arma, pero los tatuajes y la apariencia salvaje de tu pirata intimidan de por sí</option>
+								<option value="tu pirata es ligero, asombrosamente r&aacute;pido, fibroso y cruel">No es un arma, pero tu pirata es ligero, asombrosamente r&aacute;pido, fibroso y cruel</option>
+							</select>
+						</div>
+					</div>
+					<!-- perfil mutilacion -->
+					<div id="ev-pj-div-mutilacion">
+						<h2>Perfil. Mutilaci&oacute;n.</h2>
+						<div data-role="fieldcontain">
+							<label for="ev-pj-form-mutilacion">Has escogido el infortunio "mutilaci&oacute;n". Elige una discapacidad como consecuencia.</label>
+							<select name="ev-pj-form-mutilacion-select">
+								<option value="le falta un brazo">Le falta un brazo</option>
+								<option value="ha perdido un ojo">Ha perdido un ojo</option>
+								<option value="le han rajado la lengua">Le han rajado la lengua</option>
+								<option value="tiene horribles cicatrices">Tiene horribles cicactrices</option>
+								<option value="otra">Otra</option>
+							</select>
+							<input type="text" name="ev-pj-form-mutilacion-input" />
+						</div>
+					</div>
+
+				</div>
+				<!-- footer -->
+				<div data-role="footer" >
+					<a href="#ev-pj-resultados" class="ui-btn ui-btn-right btn-pie beneg">Resultado</a>
+				</div>
+		</div>
+
+
+		<!-- PJ resultados -->
+		<div data-role="page" id="ev-pj-resultados"  data-theme="r">
+				<!-- header -->
+				<div data-role="header">
+					<a href="#ev-main-panel" class="ui-btn ui-btn-inline ui-icon-bars ui-btn-icon-notext ui-corner-all ui-shadow">panel</a>
+					
+				</div>
+				<!-- main -->
+				<div data-role="main" class="ui-content ">
+					<div id="logo-portada" class="centrar">
+						<a class="ui-link" href="#ev-main-panel" >
+						<img src="img/btn-pj.png" class="img-ancho-completo-top-generador"></a>
+					</div>
+					<div class="parrafo" > 
+						Mi nombre es <div id="ev-pj-resultado-nombre" class="texto"></div>.
+					</div>
+					<div class="parrafo">Soy un pirata y he aqu&iacute; mi confesi&oacute;n:</div>
+					<div class="parrafo">
+						He servido como <div id="ev-pj-resultado-cargo" class="texto"></div><span id="ev-pj-resultado-segundoacargo"></span>  en La Daga, bajo el mando del Capit&aacute;n Jonathan Pallor, llamado Azufre Jack.		
+					</div>
+
+					<!-- pecados -->
+					<div class="parrafo">
+						<span class="titulo">Perfil: </span><span id="ev-pj-resultado-perfil-puntosperfil"class="numer"></span>
+						<br/><span class="titulo">Temeridad: </span><span id="ev-pj-resultado-temeridad" class="numer"></span> 
+						<br/><span class="titulo">Brutalidad: </span><span id="ev-pj-resultado-brutalidad" class="numer"></span>
+						<br/><span class="titulo">Alma: </span><span id="ev-pj-resultado-alma" class="numer"></span>
+						<br/><span class="titulo">Diablo: </span><span id="ev-pj-resultado-diablo" class="numer"></span>
+						<br/><span class="titulo">Ambici&oacute;n: </span><span id="ev-pj-resultado-ambicion" class="numer"></span>
+					</div>
+
+					<div class="parrafo">
+						<span class="titulo">He pecado... </span>
+						<span id="ev-pj-resultado-pecados"></span>
+					</div>
+
+					<!-- infortunios -->
+					<div class="parrafo">
+						<span class="titulo">He sufrido infortunios... </span>
+						<span id="ev-pj-resultado-infortunios"></span>
+					</div>
+					<div class="parrafo">
+						<div id="ev-pj-resultado-xxx"></div>
+					</div>
+
+					<!-- ambiciones -->
+					<div class="parrafo">
+						<span class="titulo">Ambiciono...</span>
+						<span id="ev-pj-resultado-ambiciones"></span>
+					</div>
+
+					<!-- perfil -->
+					<div class="parrafo">
+						<span class="titulo">Y voy armado con...</span>
+						<span id="ev-pj-resultado-perfil"></span>
+					</div>
+					<br/><br/><br/>
+
+				</div>
+				<!-- footer -->
+				<div data-role="footer" >
+					<a href="#ev-pj" class="ui-btn ui-btn-left btn-pie beneg">Volver</a>
+			<!--	<a href="#" onclick="toPDF()" class="ui-btn ui-btn-right btn-pie beneg">PDF</a>		-->
+				</div>
+		</div>
+
+
+
+
+		<!-- ########  DAGA Y TRIPULAC.  ######## -->
+		<div data-role="page" id="ev-daga-tripulacion"  data-theme="r">
+				<!-- header -->
+				<div data-role="header">
+					<a href="#ev-main-panel" class="ui-btn ui-btn-inline ui-icon-bars ui-btn-icon-notext ui-corner-all ui-shadow">panel</a>
+					
+				</div>
+				<!-- main -->
+				<div data-role="main" class="ui-content centrar">
+					<!-- la daga -->
+					
+					<div id="logo-portada" class="centrar">
+					<a class="ui-link" href="#ev-main-panel">
+					<img class="img-ancho-completo-top-generador" src="img/btn-laDaga.png">
+					</a>
+					</div>
+					
+					<div class="ui-field-contain" data-role="fieldcontain">
+						<h2>La Daga.</h2>
+						
+						<div class="label">La Daga es un balandro de tipo bermuda, con dos m&aacute;stiles. Por defecto tine 16 ca&ntilde;ones de 4 y 6 libras y una tripulaci&oacute;n de 80 hombres.</div>
+						<div class="label">Elegid dos cosas que sean ciertas:</div>
+						<select name="ev-dt-daga-form-select1">
+							<option value="">Nada</option>
+							<option value="es r&aacute;pida">Es r&aacute;pida</option>
+							<option value="infunde temor">Infunde temor</option>
+							<option value="es afortunada">Es afortunada</option>
+							<option value="tiene una macabra reputaci&oacute;n">Tiene una macabra reputaci&oacute;n</option>
+							<option value="esta fuertemente armada">Est&aacute; fuertemente armada (20 ca&ntilde;ones, incluyendo cuatro de 8 libras)</option>
+							<option value="es muy maniobrable">Es muy maniobrable</option>
+							<option value="es de s&oacute;lida manufactura">Es de s&oacute;lida manufactura</option>
+						</select>
+						<select name="ev-dt-daga-form-select2">
+							<option value="">Nada</option>
+							<option value="es r&aacute;pida">Es r&aacute;pida</option>
+							<option value="infunde temor">Infunde temor</option>
+							<option value="es afortunada">Es afortunada</option>
+							<option value="tiene una macabra reputaci&oacute;n">Tiene una macabra reputaci&oacute;n</option>
+							<option value="esta fuertemente armada">Est&aacute; fuertemente armada (20 ca&ntilde;ones, incluyendo cuatro de 8 libras)</option>
+							<option value="es muy maniobrable">Es muy maniobrable</option>
+							<option value="es de s&oacute;lida manufactura">Es de s&oacute;lida manufactura</option>
+						</select>
+						<div class="label">Por &uacute;ltimo, elegid el punto fuerte de la daga</div>
+						<select name="ev-dt-daga-form-puntofuerte">
+							<option value="">Nada</option>
+							<option value="perseguir y escapar">Perseguir y escapar</option>
+							<option value="ca&ntilde;&oacute;n contra ca&ntilde;&oacute;n">Ca&ntilde;&oacute;n contra ca&ntilde;&oacute;n</option>
+							<option value="borda contra borda">Borda contra borda</option>
+							<option value="abordar y repeler abordajes">Abordar y repeler abordajes</option>
+						</select>
+					</div>
+					<br/><br/>
+					<!-- tripulacion -->
+					<div class="ui-field-contain" data-role="fieldcontain">
+						<h2>La Daga. Tripulaci&oacute;n</h2>
+						<div class="label">Elegid dos que sean ciertas:</div>
+						<select name="ev-dt-tripulacion-form-select1">
+							<option value="">Nada</option>
+							<option value="es grande (110 almas)">Es grande (110 almas)</option>
+							<option value="sus miembros son, en su mayor&iacute;a, depravados asesinos">Sus miembros son, en su mayor&iacute;a, depravados asesinos</option>
+							<option value="sus miembros han navegado juntos durante muchos a&ntilde;os">Sus miembros han navegado juntos durante muchos a&ntilde;os</option>
+							<option value="est&aacute;n bien armados y ansiosos por luchar">Est&aacute;n bien armados y ansiosos por luchar</option>
+							<option value="han sido entrenados para luchar codo con codo">Han sido entrenados para luchar codo con codo</option>
+						</select>
+						<select name="ev-dt-tripulacion-form-select2">
+							<option value="">Nada</option>
+							<option value="es grande (110 almas)">Es grande (110 almas)</option>
+							<option value="sus miembros son, en su mayor&iacute;a, depravados asesinos">Sus miembros son, en su mayor&iacute;a, depravados asesinos</option>
+							<option value="sus miembros han navegado juntos durante muchos a&ntilde;os">Sus miembros han navegado juntos durante muchos a&ntilde;os</option>
+							<option value="est&aacute;n bien armados y ansiosos por luchar">Est&aacute;n bien armados y ansiosos por luchar</option>
+							<option value="han sido entrenados para luchar codo con codo">Han sido entrenados para luchar codo con codo</option>
+						</select>
+						<div class="label">Por &uacute;ltimo, elegid el punto fuerte de La Daga:</div>
+						<select name="ev-dt-tripulacion-form-select3">
+							<option value="">Nada</option>
+							<option value="apenas son suficientes para gobernar el barco">Apenas son suficientes para gobernar el barco</option>
+							<option value="no existe una lengua en com&uacute;n a bordo, en su lugar conf&iacute;an en el pidgin y su intuici&oacute;n">No existe una lengua en com&uacute;n a bordo, en su lugar conf&iacute;an en el pidgin y su intuici&oacute;n</option>
+							<option value="la tripulaci&oacute;n fue bastante maltratada por Azufre Jack">La tripulaci&oacute;n fue bastante maltratada por Azufre Jack</option>
+							<option value="su relaci&oacute;n esta plagada de mezquinas rivalidades y pu&ntilde;aladas traperas">Su relaci&oacute;n esta plagada de mezquinas rivalidades y pu&ntilde;aladas traperas</option>
+							<option value="sus miembros son en su mayor&iacute;a vagos y borrachos">Sus miembros son en su mayor&iacute;a, vagos y borrachos</option>
+							<option value="no luchar&aacute;n a menos que sean amenazados o dirigidos con firmeza">No luchar&aacute;n a menos que sean amenazados o dirigidos con firmeza</option>
+						</select>
+					</div>
+					<br/><br/><br/>
+				</div>
+				<!-- footer -->
+				<div data-role="footer">
+					<a href="#ev-daga-tripulacion-resultados" class="ui-btn ui-btn-right btn-pie beneg">Resultado</a>
+					
+				</div>
+		</div>
+
+		<!-- DAGA Y TRIPUL. resultados -->
+		<div data-role="page" id="ev-daga-tripulacion-resultados" data-theme="r">
+				<!-- header -->
+				<div data-role="header">
+					<a href="#ev-main-panel" class="ui-btn ui-btn-inline ui-icon-bars ui-btn-icon-notext ui-corner-all ui-shadow">panel</a>
+				</div>
+				<!-- main -->
+				<div data-role="main" class="ui-content ">
+					
+					<div id="logo-portada" class="centrar">
+					<a class="ui-link" href="#ev-main-panel">
+					<img class="img-ancho-completo-top-generador" src="img/btn-laDaga.png">
+					</a>
+					</div>
+					<h2>La Daga</h2>
+					
+					
+					
+					
+					<div class="parrafo">La Daga es un balandro de tipo bermuda, con dos m&aacute;stiles. Por defecto tiene 16 ca&ntilde;ones de 4 y 6 libras y una tripulaci&oacute;n de 80 hombres.</div>
+					<div id="ev-dt-daga-resultado" class="parrafo"></div>
+					<div  class="parrafo"><span class="titulo">Perfil del barco: </span><span id="ev-dt-daga-resultado-perfildelbarco">0</span></div>
+					<div id="ev-dt-daga-resultado-puntofuerte" class="parrafo"></div>
+					<br/><br/>
+					<h2>La Daga. Tripulaci&oacute;n.</h2>					
+					<div id="ev-dt-tripulacion-resultado" class="parrafo"></div>
+					<div id="ev-dt-tripulacion-resultado-select3" class="parrafo"></div>
+					<div class="parrafo"><span class="titulo">Perfil de la tripulaci&oacute;n: </span><span id="ev-dt-daga-resultado-perfildelatripulacion">0</span></div>
+					<br/><br/>
+				</div>
+				<!-- footer -->
+				<div data-role="footer">
+					<a href="#ev-daga-tripulacion" class="ui-btn ui-btn-left btn-pie beneg">Volver</a>
+				</div>
+		</div>
+
+
+
+
+		<!-- ########  ENEMIGOS  ######## -->
+		<div data-role="page" id="ev-enemigos" data-theme="r">
+				<!-- header -->
+				<div data-role="header">
+					<a href="#ev-main-panel" class="ui-btn ui-btn-inline ui-icon-bars ui-btn-icon-notext ui-corner-all ui-shadow">panel</a>
+				</div>
+				<!-- main -->
+				<div data-role="main" class="ui-content">
+					<div data-role="controlgroup">
+					
+					<div  class="centrar btn-enemigo">
+					<a href="#ev-enemigos-pnj" data-role="button">
+					<img class="img-ancho-completo-top-generador" src="img/btn-pnjimportantes.png" style="width: 100%;">
+					</a>
+					</div>
+					
+					<div  class="centrar btn-enemigo">
+					<a href="#ev-enemigos-grupos" data-role="button">
+					<img class="img-ancho-completo-top-generador" src="img/btn-tripulaciones.png" style="width: 100%;">
+					</a>
+					</div>
+					
+					<div  class="centrar btn-enemigo">
+					<a href="#ev-enemigos-barcos" data-role="button">
+					<img class="img-ancho-completo-top-generador" src="img/btn-balandros.png" style="width: 100%;">
+					</a>
+					</div>
+					
+					<div  class="centrar btn-enemigo">
+					<a data-role="button" href="#ev-enemigos-fortalezas">
+					<img class="img-ancho-completo-top-generador" src="img/btn-fortalezas.png" style="width: 100%;">
+					</a>
+					</div> 
+					</div> 
+				</div>
+		</div>
+
+		<!-- ########  ENEMIGOS. pnj  ######## -->
+		<div data-role="page" id="ev-enemigos-pnj" data-theme="r">
+				<!-- header -->
+				<div data-role="header">
+					<a href="#ev-main-panel" class="ui-btn ui-btn-inline ui-icon-bars ui-btn-icon-notext ui-corner-all ui-shadow">panel</a>					
+				</div>
+				<!-- main -->
+				<div data-role="main" class="ui-content centrar">
+				<div id="logo-portada" class="centrar">
+					<a class="ui-link" href="#ev-main-panel">
+					<img class="img-ancho-completo-top-generador" src="img/btn-pnjimportantes.png">
+					</a>
+					</div>
+					
+					<h2>Nombre</h2>
+					<div data-role="fieldcontain">
+						<div class="label">Escribe el nombre por el que es conocido.</div>
+						<input type="text" name="ev-enemigos-pnj-form-nombre" />
+					</div>
+					<h2>Cargo</h2>
+					<div data-role="fieldcontain">
+						<div class="label">Piratas, Capitán, oficial, alguacil, gobernador, escolta, soldado, etc.</div>
+						<input type="text" name="ev-enemigos-pnj-form-cargo" />
+					</div>
+					<h2>Temeridad</h2>
+					<div class="centrar contenedor-dados ">
+						<div id="ev-enemigos-pnj-form-temeridad-1" class="ev-enemigos-dado-normal"></div>
+						<div id="ev-enemigos-pnj-form-temeridad-2" class="ev-enemigos-dado-normal"></div>
+					</div>
+					<div class="centrar separador"></div>
+					<h2>Perfil</h2>
+					<div data-role="fieldcontain">
+						<div class="label">Elije hasta tres.</div>
+						<select name="ev-enemigos-pnj-form-perfil1">
+							<option value="">Nada</option>
+							<option value="soy enorme">Es enorme</option>
+							<option value="soy cruel">Es cruel</option>
+							<option value="estoy fuertemente armado">Est&aacute; fuertemente armado</option>
+							<option value="soy un asesino despiadado">Es un asesino despiadado</option>
+							<option value="peleo sucio y no tengo escr&uacute;pulos">Pelea sucio y no tiene escr&uacute;pulos</option>
+							<option value="estoy entrenado, y soy disciplinado y profesional">Est&aacute; entrenado, y es disciplinado y profesional</option>
+							<option value="no temo a la muerte">No teme a la muerte</option>
+							<option value="soy diestro con la espada y la pistola">Es diestro con la espada y la pistola</option>
+							<option value="estoy pose&iacute;do por una furia asesina">Est&aacute; pose&iacute;do por una furia asesina</option>
+							<option value="soy tenaz y nunca retrocedo">Es tenaz y nunca retrocede</option>
+							<option value="tengo mucho que perder">Tiene mucho que perder</option>
+							<option value="no tengo mucho que perder">No tiene nada que perder</option>
+						</select>
+						<select name="ev-enemigos-pnj-form-perfil2">
+							<option value="">Nada</option>
+							<option value="soy enorme">Es enorme</option>
+							<option value="soy cruel">Es cruel</option>
+							<option value="estoy fuertemente armado">Est&aacute; fuertemente armado</option>
+							<option value="soy un asesino despiadado">Es un asesino despiadado</option>
+							<option value="peleo sucio y no tengo escr&uacute;pulos">Pelea sucio y no tiene escr&uacute;pulos</option>
+							<option value="estoy entrenado, y soy disciplinado y profesional">Est&aacute; entrenado, y es disciplinado y profesional</option>
+							<option value="no temo a la muerte">No teme a la muerte</option>
+							<option value="soy diestro con la espada y la pistola">Es diestro con la espada y la pistola</option>
+							<option value="estoy pose&iacute;do por una furia asesina">Est&aacute; pose&iacute;do por una furia asesina</option>
+							<option value="soy tenaz y nunca retrocedo">Es tenaz y nunca retrocede</option>
+							<option value="tengo mucho que perder">Tiene mucho que perder</option>
+							<option value="no tengo mucho que perder">No tiene nada que perder</option>
+						</select>
+						<select name="ev-enemigos-pnj-form-perfil3">
+							<option value="">Nada</option>
+							<option value="soy enorme">Es enorme</option>
+							<option value="soy cruel">Es cruel</option>
+							<option value="estoy fuertemente armado">Est&aacute; fuertemente armado</option>
+							<option value="soy un asesino despiadado">Es un asesino despiadado</option>
+							<option value="peleo sucio y no tengo escr&uacute;pulos">Pelea sucio y no tiene escr&uacute;pulos</option>
+							<option value="estoy entrenado, y soy disciplinado y profesional">Est&aacute; entrenado, y es disciplinado y profesional</option>
+							<option value="no temo a la muerte">No teme a la muerte</option>
+							<option value="soy diestro con la espada y la pistola">Es diestro con la espada y la pistola</option>
+							<option value="estoy pose&iacute;do por una furia asesina">Est&aacute; pose&iacute;do por una furia asesina</option>
+							<option value="soy tenaz y nunca retrocedo">Es tenaz y nunca retrocede</option>
+							<option value="tengo mucho que perder">Tiene mucho que perder</option>
+							<option value="no tengo mucho que perder">No tiene nada que perder</option>
+						</select>
+						<br/>
+						<div>
+							<input type="checkbox" name="ev-enemigos-pnj-form-debil" id="ev-enemigos-pnj-form-debil" value="es d&eacute;bil" />
+							<label for="ev-enemigos-pnj-form-debil">Ha envejecido, o es d&eacute;bil, o enfermizo.</label>
+						</div>
+						<br/>
+						<div>
+							<div class="label">Nombra una discapacidad, si la tuviera.</div>
+							<input type="text" name="ev-enemigos-pnj-form-discapacidad" />
+						</div>
+					</div>
+					<br/><br/><br/>
+				</div>
+				<!-- footer -->
+				<div data-role="footer">
+					<a href="#ev-enemigos-pnj-resultado" class="ui-btn ui-btn-right btn-pie beneg">Resultado</a>
+				</div>
+		</div>
+
+		<!-- ENEMIGOS. pnj - resultado -->
+		<div data-role="page" id="ev-enemigos-pnj-resultado"  data-theme="r">
+				<!-- header -->
+				<div data-role="header">
+					<a href="#ev-main-panel" class="ui-btn ui-btn-inline ui-icon-bars ui-btn-icon-notext ui-corner-all ui-shadow">panel</a>
+					
+				</div>
+				<!-- main -->
+				<div data-role="main" class="ui-content">
+				<div id="logo-portada" class="centrar">
+					<a class="ui-link" href="#ev-main-panel">
+					<img class="img-ancho-completo-top-generador" src="img/btn-pnjimportantes.png">
+					</a>
+				</div>
+					
+				<div class="parrafo"><span class="titulo">Nombre: </span> <span id="ev-enemigos-pnj-resultado-nombre"></span> </div>
+				<div class="parrafo"><span class="titulo">Cargo: </span><span id="ev-enemigos-pnj-resultado-cargo"></span></div>
+				<div class="parrafo"><div id="ev-enemigos-pnj-resultado-str"></div></div>
+				<div class="parrafo"><span class="titulo">Temeridad: </span><span id="ev-enemigos-pnj-resultado-temeridad"></span></div>
+				<div class="parrafo"><span class="titulo">Perfil: </span><span id="ev-enemigos-pnj-resultado-perfil">5</span></div>
+				<div class="parrafo"><span id="ev-enemigos-pnj-resultado-debil-discapacidad"></span></div>
+				<br/><br/>
+				</div>
+				
+				<!-- footer -->
+				<div data-role="footer">
+					<a href="#ev-enemigos-pnj" class="ui-btn ui-btn-left  btn-pie beneg">Volver</a>
+				</div>
+		</div>
+
+		<!-- ########  ENEMIGOS. grupos  ######## -->
+		<div data-role="page" id="ev-enemigos-grupos" data-theme="r">
+				<!-- header -->
+				<div data-role="header">
+					<a href="#ev-main-panel" class="ui-btn ui-btn-inline ui-icon-bars ui-btn-icon-notext ui-corner-all ui-shadow">panel</a>					
+				</div>
+				<!-- main -->
+				<div data-role="main" class="ui-content centrar">
+				
+				<div id="logo-portada" class="centrar">
+					<a class="ui-link" href="#ev-main-panel">
+					<img class="img-ancho-completo-top-generador" src="img/btn-tripulaciones.png">
+					</a>
+				</div>
+				
+					<h2>Tipo de tripulaci&oacute;n, grupo o turba</h2>
+					<div data-role="fieldcontain">
+						<div class="label">La tripulaci&oacute;n de un barco enemigo, una guarnici&oacute;n militar, la ronda de un alguacil, una turba de ciudadanos furiosos, etc.</div>
+						<input type="text" name="ev-enemigos-grupos-form-nombre" />
+					</div>
+					<br/>
+					<div data-role="fieldcontain">
+						<div class="label">&#191;Cu&aacute;les de las siguientes son ciertas? Elige un m&aacute;ximo de tres.</div>
+						<select name="ev-enemigos-grupos-form-select1">
+							<option value="">Nada</option>
+							<option value="somos muchos">Es grande</option>
+							<option value="somos, con diferencia, asesinos depravados">Sus miembros son, con diferencia, asesinos depravados</option>
+							<option value="hemos servido juntos durante muchos a&ntilde;os">Sus miembros han servido juntos durante muchos a&ntilde;os</option>
+							<option value="estamos bien armados y con ganas de luchar">Est&aacute;n bien armados y con ganas de luchar</option>
+							<option value="hemos sido entrenados para luchar codo con codo">Han sido entrenados para luchar codo con codo</option>
+							<option value="estamos protegiendo a nuestras familias y hogares">Est&aacute;n protegiendo a sus familias y hogares</option>
+							<option value="compartimos una fuerte fe o una lealtad inquebrantable a nuestra causa">Comparten una fuerte fe o tienen una lealtad inquebrantable a su causa</option>
+							<option value="hemos sido muy bien pagados para seguir &oacute;rdenes">Han sido muy bien pagados para seguir &oacute;rdenes</option>
+							<option value="nuestros l&iacute;deres nos tienen cogidos por el gaznate">Sus l&iacute;deres los tienen cogidos por el gaznate</option>
+						</select>
+						<select name="ev-enemigos-grupos-form-select2">
+							<option value="">Nada</option>
+							<option value="somos muchos">Es grande</option>
+							<option value="somos, con diferencia, asesinos depravados">Sus miembros son, con diferencia, asesinos depravados</option>
+							<option value="hemos servido juntos durante muchos a&ntilde;os">Sus miembros han servido juntos durante muchos a&ntilde;os</option>
+							<option value="estamos bien armados y con ganas de luchar">Est&aacute;n bien armados y con ganas de luchar</option>
+							<option value="hemos sido entrenados para luchar codo con codo">Han sido entrenados para luchar codo con codo</option>
+							<option value="estamos protegiendo a nuestras familias y hogares">Est&aacute;n protegiendo a sus familias y hogares</option>
+							<option value="compartimos una fuerte fe o una lealtad inquebrantable a nuestra causa">Comparten una fuerte fe o tienen una lealtad inquebrantable a su causa</option>
+							<option value="hemos sido muy bien pagados para seguir &oacute;rdenes">Han sido muy bien pagados para seguir &oacute;rdenes</option>
+							<option value="nuestros l&iacute;deres nos tienen cogidos por el gaznate">Sus l&iacute;deres los tienen cogidos por el gaznate</option>
+						</select>
+						<select name="ev-enemigos-grupos-form-select3">
+							<option value="">Nada</option>
+							<option value="somos muchos">Es grande</option>
+							<option value="somos, con diferencia, asesinos depravados">Sus miembros son, con diferencia, asesinos depravados</option>
+							<option value="hemos servido juntos durante muchos a&ntilde;os">Sus miembros han servido juntos durante muchos a&ntilde;os</option>
+							<option value="estamos bien armados y con ganas de luchar">Est&aacute;n bien armados y con ganas de luchar</option>
+							<option value="hemos sido entrenados para luchar codo con codo">Han sido entrenados para luchar codo con codo</option>
+							<option value="estamos protegiendo a nuestras familias y hogares">Est&aacute;n protegiendo a sus familias y hogares</option>
+							<option value="compartimos una fuerte fe o una lealtad inquebrantable a nuestra causa">Comparten una fuerte fe o tienen una lealtad inquebrantable a su causa</option>
+							<option value="hemos sido muy bien pagados para seguir &oacute;rdenes">Han sido muy bien pagados para seguir &oacute;rdenes</option>
+							<option value="nuestros l&iacute;deres nos tienen cogidos por el gaznate">Sus l&iacute;deres los tienen cogidos por el gaznate</option>
+						</select>
+					</div>
+					<br/>
+					<div data-role="fieldcontain">
+						<div class="label">Y elige un m&aacute;ximo de tres.</div>
+						<select name="ev-enemigos-grupos-form-select4">
+							<option value="">Nada</option>
+							<option value="somos pocos, apenas suficientes para nuestro prop&oacute;sito">Son pocos, apenas suficientes para su prop&oacute;sito</option>
+							<option value="somos una tripulaci&oacute;n mercante, asustados, no estamos preparados para luchar">Son una tripulaci&oacute;n mercante, asustada, no est&aacute;n preparados para luchar</option>
+							<option value="si se nos ofrece piedad estaremos encantados de rendirnos">Si se les ofrece piedad estar&aacute;n encantados de rendirse</option>
+							<option value="hemos sido muy maltratados por nuestros l&iacute;deres">Han sido muy maltratados por sus l&iacute;deres</option>
+							<option value="nuestra relaci&oacute;n est&aacute; plagada de mezquinas rivalidades y pu&ntilde;aladas traperas">Su relaci&oacute;n est&aacute; plagada de mezquinas rivalidades y pu&ntilde;aladas traperas</option>
+							<option value="nuestros miembros son, en su mayor&iacute;a, vagos y borrachos">Sus miembros son, en su mayor&iacute;a, vagos y borrachos</option>
+							<option value="no lucharemos a menos que seamos amenazados o dirigidos con firmeza">No luchar&aacute;n a menos que sean amenazados o dirigidos con firmeza</option>
+							<option value="nuestros l&iacute;deres son d&eacute;biles y no nos dirigen bien">Sus l&iacute;deres son d&eacute;biles y no los dirigen bien</option>
+							<option value="estamos hambrientos, desmoralizados o pobremente equipados">Est&aacute;n hambrientos, desmoralizados o pobremente equipados</option>
+						</select>
+						<select name="ev-enemigos-grupos-form-select5">
+							<option value="">Nada</option>
+							<option value="somos pocos, apenas suficientes para nuestro prop&oacute;sito">Son pocos, apenas suficientes para su prop&oacute;sito</option>
+							<option value="somos una tripulaci&oacute;n mercante, asustados, no estamos preparados para luchar">Son una tripulaci&oacute;n mercante, asustada, no est&aacute;n preparados para luchar</option>
+							<option value="si se nos ofrece piedad estaremos encantados de rendirnos">Si se les ofrece piedad estar&aacute;n encantados de rendirse</option>
+							<option value="hemos sido muy maltratados por nuestros l&iacute;deres">Han sido muy maltratados por sus l&iacute;deres</option>
+							<option value="nuestra relaci&oacute;n est&aacute; plagada de mezquinas rivalidades y pu&ntilde;aladas traperas">Su relaci&oacute;n est&aacute; plagada de mezquinas rivalidades y pu&ntilde;aladas traperas</option>
+							<option value="nuestros miembros son, en su mayor&iacute;a, vagos y borrachos">Sus miembros son, en su mayor&iacute;a, vagos y borrachos</option>
+							<option value="no lucharemos a menos que seamos amenazados o dirigidos con firmeza">No luchar&aacute;n a menos que sean amenazados o dirigidos con firmeza</option>
+							<option value="nuestros l&iacute;deres son d&eacute;biles y no nos dirigen bien">Sus l&iacute;deres son d&eacute;biles y no los dirigen bien</option>
+							<option value="estamos hambrientos, desmoralizados o pobremente equipados">Est&aacute;n hambrientos, desmoralizados o pobremente equipados</option>
+						</select>
+						<select name="ev-enemigos-grupos-form-select6">
+							<option value="">Nada</option>
+							<option value="somos pocos, apenas suficientes para nuestro prop&oacute;sito">Son pocos, apenas suficientes para su prop&oacute;sito</option>
+							<option value="somos una tripulaci&oacute;n mercante, asustados, no estamos preparados para luchar">Son una tripulaci&oacute;n mercante, asustada, no est&aacute;n preparados para luchar</option>
+							<option value="si se nos ofrece piedad estaremos encantados de rendirnos">Si se les ofrece piedad estar&aacute;n encantados de rendirse</option>
+							<option value="hemos sido muy maltratados por nuestros l&iacute;deres">Han sido muy maltratados por sus l&iacute;deres</option>
+							<option value="nuestra relaci&oacute;n est&aacute; plagada de mezquinas rivalidades y pu&ntilde;aladas traperas">Su relaci&oacute;n est&aacute; plagada de mezquinas rivalidades y pu&ntilde;aladas traperas</option>
+							<option value="nuestros miembros son, en su mayor&iacute;a, vagos y borrachos">Sus miembros son, en su mayor&iacute;a, vagos y borrachos</option>
+							<option value="no lucharemos a menos que seamos amenazados o dirigidos con firmeza">No luchar&aacute;n a menos que sean amenazados o dirigidos con firmeza</option>
+							<option value="nuestros l&iacute;deres son d&eacute;biles y no nos dirigen bien">Sus l&iacute;deres son d&eacute;biles y no los dirigen bien</option>
+							<option value="estamos hambrientos, desmoralizados o pobremente equipados">Est&aacute;n hambrientos, desmoralizados o pobremente equipados</option>
+						</select>
+					</div>
+					<br/><br/>
+				</div>
+				<!-- footer -->
+				<div data-role="footer">
+					<a href="#ev-enemigos-grupos-resultado" class="ui-btn ui-btn-right  btn-pie beneg">Resultado</a>
+				</div>
+		</div>
+		
+
+		<!-- ########  ENEMIGOS. grupos. resultado  ######## -->
+		<div data-role="page" id="ev-enemigos-grupos-resultado" data-theme="r">
+				<!-- header -->
+				<div data-role="header">
+					<a href="#ev-main-panel" class="ui-btn ui-btn-inline ui-icon-bars ui-btn-icon-notext ui-corner-all ui-shadow">panel</a>
+					
+				</div>
+				<!-- main -->
+				<div data-role="main" class="ui-content">
+				<div id="logo-portada" class="centrar">
+					<a class="ui-link" href="#ev-main-panel">
+					<img class="img-ancho-completo-top-generador" src="img/btn-tripulaciones.png">
+					</a>
+				</div>
+					<h2 id="ev-enemigos-grupos-resultado-nombre"></h2>
+					<div class="parrafo" id="ev-enemigos-grupos-resultado-str"></div>
+					<div class="parrafo"><span class="titulo">Perfil: </span><span id="ev-enemigos-grupos-resultado-perfil">5</span></div>
+					<br/><br/>
+				</div>
+				<!-- footer -->
+				<div data-role="footer">
+					<a href="#ev-enemigos-grupos" class="ui-btn ui-btn-right  btn-pie beneg">Volver</a>
+				</div>
+		</div>
+
+		<!-- ########  ENEMIGOS. barcos  ######## -->
+		<div data-role="page" id="ev-enemigos-barcos"  data-theme="r">
+				<!-- header -->
+				<div data-role="header">
+					<a href="#ev-main-panel" class="ui-btn ui-btn-inline ui-icon-bars ui-btn-icon-notext ui-corner-all ui-shadow">panel</a>
+				</div>
+				<!-- main -->
+				<div data-role="main" class="ui-content  centrar">
+				<div id="logo-portada" class="centrar">
+					<a class="ui-link" href="#ev-main-panel">
+					<img class="img-ancho-completo-top-generador" src="img/btn-balandros.png">
+					</a>
+				</div>
+			
+					<h2>Nombre de la embarcaci&oacute;n</h2>
+				<div class="ui-field-contain" data-role="fieldcontain">
+					<input type="text" name="ev-enemigos-barcos-form-nombre" />
+				</div>
+					<h2>Tipo de embarcaci&oacute;n</h2>
+				<div class="ui-field-contain" data-role="fieldcontain">
+				<select name="ev-enemigos-barcos-form-tipo">
+						<option value="embarcacionMercante">Embarcaci&oacute;n mercante</option>
+						<option value="balandro">Balandro</option>
+						<option value="barco">Barco</option>
+						<option value="navioLineaArmada">Nav&iacute;o de l&iacute;nea de la armada</option>
+						<option value="embarcacionGuerraNormal">Embarcaci&oacute;n de guerra normal</option>
+					</select>
+				</div>
+				<div class="ui-field-contain" data-role="fieldcontain">
+						<div class="label">&#191;Cu&aacute;les son ciertas? Elige <span id="ev-enemibos-barcos-resultado-max1">N</span> como m&aacute;ximo.</div>
+						<input type="checkbox" name="ev-enemigos-barcos-form-tieneunamacabrareputacion" id="ev-enemigos-barcos-form-tieneunamacabrareputacion" value="tiene una macabra reputaci&oacute;n" class="custom" />
+						<label for="ev-enemigos-barcos-form-tieneunamacabrareputacion">Tiene una macabra reputaci&oacute;n</label>
+						<input type="checkbox" name="ev-enemigos-barcos-form-esimponente" id="ev-enemigos-barcos-form-esimponente" value="es imponente" class="custom" />
+						<label for="ev-enemigos-barcos-form-esimponente">Es imponente</label>
+						<input type="checkbox" name="ev-enemigos-barcos-form-esafortunada" id="ev-enemigos-barcos-form-esafortunada" value="es afortunada" class="custom" />
+						<label for="ev-enemigos-barcos-form-esafortunada">Es afortunada</label>
+						<input type="checkbox" name="ev-enemigos-barcos-form-esdesolidamanufactura" id="ev-enemigos-barcos-form-esdesolidamanufactura" value="es de s&oacute;lida manufactura" class="custom" />
+						<label for="ev-enemigos-barcos-form-esdesolidamanufactura">Es de s&oacute;lida manufactura</label>
+						<input type="checkbox" name="ev-enemigos-barcos-form-esrapida" id="ev-enemigos-barcos-form-esrapida" value="es r&aacute;pida" class="custom" />
+						<label for="ev-enemigos-barcos-form-esrapida">Es r&aacute;pida</label>
+						<input type="checkbox" name="ev-enemigos-barcos-form-estafuertementearmada" id="ev-enemigos-barcos-form-estafuertementearmada" value="est&aacute; fuertemente armada" class="custom" />
+						<label for="ev-enemigos-barcos-form-estafuertementearmada">Est&aacute; fuertemente armada</label>
+						<input type="checkbox" name="ev-enemigos-barcos-form-esmaniobrable" id="ev-enemigos-barcos-form-esmaniobrable" value="es maniobrable" class="custom" />
+						<label for="ev-enemigos-barcos-form-esmaniobrable">Es maniobrable</label>
+					</div>
+					<div class="ui-field-contain" data-role="fieldcontain">
+						<div class="label">&#191;Y cu&aacute;les de las siguientes son ciertas? Elige <span id="ev-enemibos-barcos-resultado-max2">N</span> como m&aacute;ximo.</div>
+						<input type="checkbox" name="ev-enemigos-barcos-form-estasobrecargada" id="ev-enemigos-barcos-form-estasobrecargada" value="est&aacute; sobrecargada" class="custom" />
+						<label for="ev-enemigos-barcos-form-estasobrecargada">Est&aacute; sobrecargada</label>
+						<input type="checkbox" name="ev-enemigos-barcos-form-esfragil" id="ev-enemigos-barcos-form-esfragil" value="es fr&aacute;gil" class="custom" />
+						<label for="ev-enemigos-barcos-form-esfragil">Es fr&aacute;gil</label>
+						<input type="checkbox" name="ev-enemigos-barcos-form-tienefugas" id="ev-enemigos-barcos-form-tienefugas" value="tiene fugas" class="custom" />
+						<label for="ev-enemigos-barcos-form-tienefugas">Tiene fugas</label>
+						<input type="checkbox" name="ev-enemigos-barcos-form-estapobrementearmada" id="ev-enemigos-barcos-form-estapobrementearmada" value="est&aacute; pobremente armada" class="custom" />
+						<label for="ev-enemigos-barcos-form-estapobrementearmada">Est&aacute; pobremente armada</label>
+						<input type="checkbox" name="ev-enemigos-barcos-form-estavieja" id="ev-enemigos-barcos-form-estavieja" value="est&aacute; vieja" class="custom" />
+						<label for="ev-enemigos-barcos-form-estavieja">Est&aacute; vieja</label>
+						<input type="checkbox" name="ev-enemigos-barcos-form-lefaltatripulacion" id="ev-enemigos-barcos-form-lefaltatripulacion" value="le falta tripulaci&oacute;n" class="custom" />
+						<label for="ev-enemigos-barcos-form-lefaltatripulacion">Le falta tripulaci&oacute;n</label>
+						<input type="checkbox" name="ev-enemigos-barcos-form-eslenta" id="ev-enemigos-barcos-form-eslenta" value="es lenta" class="custom" />
+						<label for="ev-enemigos-barcos-form-eslenta">Es lenta</label>
+					</div>
+					<br/><br/>
+				</div>
+				<!-- footer -->
+				<div data-role="footer">
+					<a href="#ev-enemigos-barcos-resultado" class="ui-btn ui-btn-right btn-pie beneg">Resultado</a>
+				</div>
+		</div>
+
+		<!-- ########  ENEMIGOS. barcos. resultado  ######## -->
+		<div data-role="page" id="ev-enemigos-barcos-resultado"  data-theme="r">
+				<!-- header -->
+				<div data-role="header">
+					<a href="#ev-main-panel" class="ui-btn ui-btn-inline ui-icon-bars ui-btn-icon-notext ui-corner-all ui-shadow">panel</a>					
+				</div>
+				<!-- main -->
+				<div data-role="main" class="ui-content">
+				<div id="logo-portada" class="centrar">
+					<a class="ui-link" href="#ev-main-panel">
+					<img class="img-ancho-completo-top-generador" src="img/btn-tripulaciones.png">
+					</a>
+				</div>
+				
+				<h2 id="ev-enemigos-barcos-resultado-nombre"></h2>
+				<div class="parrafo" id="ev-enemigos-barcos-resultado-1"></div>
+				<div class="parrafo" id="ev-enemigos-barcos-resultado-2"></div>
+				<div class="parrafo"><span class="titulo">Perfil: </span><span id="ev-enemigos-barcos-resultado-perfil"></span></div>
+					<br/><br/>
+				</div>
+				<!-- footer -->
+				<div data-role="footer">
+					<a href="#ev-enemigos-barcos" class="ui-btn ui-btn-right btn-pie beneg">Volver</a>
+				</div>
+		</div>
+
+		<!-- ########  ENEMIGOS. fortalezas  ######## -->
+		<div data-role="page" id="ev-enemigos-fortalezas"  data-theme="r">
+				<!-- header -->
+				<div data-role="header">
+					<a href="#ev-main-panel" class="ui-btn ui-btn-inline ui-icon-bars ui-btn-icon-notext ui-corner-all ui-shadow">panel</a>
+					
+				</div>
+				<!-- main -->
+				<div data-role="main" class="ui-content centrar">
+				<div id="logo-portada" class="centrar">
+					<a class="ui-link" href="#ev-main-panel">
+					<img class="img-ancho-completo-top-generador" src="img/btn-fortalezas.png">
+					</a>
+				</div>
+				
+					 <h2>Nombre de la fortaleza</h2>
+					<div data-role="fieldcontain" class="ui-field-contain">
+					<input type="text" name="ev-enemigos-fortalezas-form-nombre" />
+					</div>
+					<br/>
+					<div data-role="fieldcontain">
+						<div class="label">&#191;Cu&aacute;les de las siguientes afirmaciones son ciertas? Elige un m&aacute;ximo de tres.</div>
+						<input type="checkbox" name="ev-enemigos-fortalezas-form-tieneunabuenaposicion" id="ev-enemigos-fortalezas-form-tieneunabuenaposicion" value="tiene una buena posici&oacute;n" class="custom" />
+						<label for="ev-enemigos-fortalezas-form-tieneunabuenaposicion">Tiene una buena posici&oacute;n</label>
+						<input type="checkbox" name="ev-enemigos-fortalezas-form-tieneunamacabrareputacion" id="ev-enemigos-fortalezas-form-tieneunamacabrareputacion" value="tiene una macabra reputaci&oacute;n" class="custom" />
+						<label for="ev-enemigos-fortalezas-form-tieneunamacabrareputacion">Tiene una macabra reputaci&oacute;n</label>
+						<input type="checkbox" name="ev-enemigos-fortalezas-form-esdesolidaconstruccion" id="ev-enemigos-fortalezas-form-esdesolidaconstruccion" value="es de s&oacute;lida construcci&oacute;n" class="custom" />
+						<label for="ev-enemigos-fortalezas-form-esdesolidaconstruccion">Es de s&oacute;lida construcci&oacute;n</label>
+						<input type="checkbox" name="ev-enemigos-fortalezas-form-estafuertementearmada" id="ev-enemigos-fortalezas-form-estafuertementearmada" value="est&aacute; fuertemente armada" class="custom" />
+						<label for="ev-enemigos-fortalezas-form-estafuertementearmada">Est&aacute; fuertemente armada</label>
+						<input type="checkbox" name="ev-enemigos-fortalezas-form-esimponente" id="ev-enemigos-fortalezas-form-esimponente" value="es imponente" class="custom" />
+						<label for="ev-enemigos-fortalezas-form-esimponente">Es imponente</label>
+					</div>
+					<br/>
+					<div data-role="fieldcontain">
+						<div class="label">&#191;Cu&aacute;les de las siguientes afirmaciones son ciertas? Elige un m&aacute;ximo de dos.</div>
+						<input type="checkbox" name="ev-enemigos-fortalezas-form-essolodemaderayladrillosinpiedra" id="ev-enemigos-fortalezas-form-essolodemaderayladrillosinpiedra" value="es s&oacute;lo de madera y ladrillo, sin piedra" class="custom" />
+						<label for="ev-enemigos-fortalezas-form-essolodemaderayladrillosinpiedra">Es s&oacute;lo de madera y ladrillo, sin piedra</label>
+						<input type="checkbox" name="ev-enemigos-fortalezas-form-esaccesibledesdecualquierlado" id="ev-enemigos-fortalezas-form-esaccesibledesdecualquierlado" value="es accesible desde cualquier lado" class="custom" />
+						<label for="ev-enemigos-fortalezas-form-esaccesibledesdecualquierlado">Es accesible desde cualquier lado</label>
+						<input type="checkbox" name="ev-enemigos-fortalezas-form-estapobrementearmada" id="ev-enemigos-fortalezas-form-estapobrementearmada" value="est&aacute; pobremente armada" class="custom" />
+						<label for="ev-enemigos-fortalezas-form-estapobrementearmada">Est&aacute; pobremente armada</label>
+						<input type="checkbox" name="ev-enemigos-fortalezas-form-estavieja" id="ev-enemigos-fortalezas-form-estavieja" value="est&aacute; vieja" class="custom" />
+						<label for="ev-enemigos-fortalezas-form-estavieja">Est&aacute; vieja</label>
+						<input type="checkbox" name="ev-enemigos-fortalezas-form-lefaltanhombres" id="ev-enemigos-fortalezas-form-lefaltanhombres" value="le faltan hombres" class="custom" />
+						<label for="ev-enemigos-fortalezas-form-lefaltanhombres">Le faltan hombres</label>
+					</div>
+					<br/><br/>
+				</div>
+				<!-- footer -->
+				<div data-role="footer">
+					<a href="#ev-enemigos-fortalezas-resultado" class="ui-btn ui-btn-right btn-pie beneg">Resultado</a>
+				</div>
+		</div>
+
+		<!-- ########  ENEMIGOS. fortalezas. resultado  ######## -->
+		<div data-role="page" id="ev-enemigos-fortalezas-resultado"  data-theme="r">
+				<!-- header -->
+				<div data-role="header">
+					<a href="#ev-main-panel" class="ui-btn ui-btn-inline ui-icon-bars ui-btn-icon-notext ui-corner-all ui-shadow">panel</a>
+					
+				</div>
+				<!-- main -->
+				<div data-role="main" class="ui-content">
+				<div id="logo-portada" class="centrar">
+					<a class="ui-link" href="#ev-main-panel">
+					<img class="img-ancho-completo-top-generador" src="img/btn-fortalezas.png">
+					</a>
+				</div>
+				
+					<h2 id="ev-enemigos-fortalezas-resultado-nombre"> </h2>
+					
+					<div class="parrafo"id="ev-enemigos-fortalezas-resultado-str"></div>
+					
+					<div class="parrafo"><span class="titulo">Perfil: </span><span id="ev-enemigos-fortalezas-resultado-perfil"></span></div>
+				<br/><br/>
+				</div>
+				<!-- footer -->
+				<div data-role="footer">
+					<a href="#ev-enemigos-fortalezas" class="ui-btn ui-btn-right btn-pie beneg">Volver</a>
+				</div>
+		</div>
+
+
+
+
+		<!-- ########  ADQUIRIR JUEGO  ######## -->
+		<div data-role="page" id="ev-adquirir"  data-theme="r">
+				<!-- header -->
+				<div data-role="header">
+					<a href="#ev-main-panel" class="ui-btn ui-btn-inline ui-icon-bars ui-btn-icon-notext ui-corner-all ui-shadow">panel</a>
+				</div>
+				<!-- main -->
+				<div data-role="main" class="ui-content centrar">
+				<div id="logo-portada" class="centrar">
+					<a class="ui-link" href="#ev-main-panel">
+					<img class="img-ancho-completo-top-generador" src="img/btn-adquirirjuego.png">
+					</a>
+				</div>
+				
+					<div data-role="controlgroup" id="ev-envenenados-lista-mecenas-adquirir">
+					</div>
+
+
+				<br/><br/>
+				</div>
+		</div>
+
+
+
+
+		<!-- ########  APOYO  ######## -->
+		<div data-role="page" id="ev-apoyo"  data-theme="r">
+				<!-- header -->
+				<div data-role="header">
+					<a href="#ev-main-panel" class="ui-btn ui-btn-inline ui-icon-bars ui-btn-icon-notext ui-corner-all ui-shadow">panel</a>
+				</div>
+				<!-- main -->
+				<div data-role="main" class="ui-content centrar">
+				
+				<div id="logo-portada" class="centrar">
+					<a class="ui-link" href="#ev-main-panel">
+					<img class="img-ancho-completo-top-generador" src="img/btn-apoyo.png">
+					</a>
+				</div>
+				
+					<div>Si te ha gustado esta aplicaci&oacute;n y quieres apoyarnos para que sigamos desarrollando otras, te invitamos a que visites nuestro proyecto de mecenazgo:</div>					
+					
+					<div  class="centrar btn-enemigo">
+					<a href="http://www.patreon.com/valver" data-role="button">
+					<h2 style="color: #fce7d0;">Ir a patreon de <br/>aplicaciones de roleras</h2>
+					</a>
+					</div>
+					
+					
+					<div>Esta aplicaci&oacute;n ha sido posible gracias a la financiaci&oacute;n aportada por los mecenas:</div>
+					
+					<h2>Colaboran</h2>
+					<div class="centrar">
+					<a class="ui-link" href="" ><img src="img/logo-rolgratis.png" class="portada-btn"></a> 	<a class="ui-link" href="" ><img src="img/logo-summum.png" class="portada-btn"></a> <a class="ui-link" href="" ><img src="img/logo-tesoros.png" class="portada-btn"></a> <a class="ui-link" href="" ><img src="img/logo--dracotienda.png" class="portada-btn"></a> 
+					</div>
+
+
+					<h2>Gracias a</h2>
+					<p id="ev-envenenados-lista-patrones2">
+						Lorem ipsum, dolor sit, amet, consectetur, adipiscing elit, Ut gravida, nec justo, nec, placerat, Mauris molestie ,malesuada turpis, vel euismod, tellus, tincidunt, tristique, Nunc, at leo sed, nunc, aliquet, cursus, sit amet, vitae, dui, Nam erat, enim, finibus, pellentesque y faucibus. 
+					</p>
+
+
+
+					<div class="centrar">
+					<img src="img/aviso.png" class="img-ancho-completo">
+					</div>
+					
+					
+					<br/><br/>
+				</div>
+		</div>
+
+
+
+
+		<script type="text/javascript" src="cordova.js"></script>
+<!--	<script type="text/javascript" src="js/fastclick.js"></script>				-->
+		<script type="text/javascript" src="jquery-1.11.1.min.js"></script>
+<!--	<script type="text/javascript" src="js/jspdf.min.js"></script>					-->
+		<script type="text/javascript" src="js/script2.js"></script>
+		<script type="text/javascript" src="js/script.js"></script>
+		<script type="text/javascript" src="jquery.mobile-1.4.4.js"></script>
+
+
+	</body>
+
+</html>

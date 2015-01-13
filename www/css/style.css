@@ -1,0 +1,115 @@
+/*Envenenado 0.9 css*/
+/* COLOR Oscuro: #200f07; / Tinto= #500000; / 50% Claro: #8b7661; / Claro: #fce7d0 */
+/*General ---------------------------------------------- */ 
+
+body {background-color:#200f07;}
+@font-face {font-family: 'beneg';src: url('../beneg.ttf');}
+p {font:1em; text-align:center; padding: 0 10px;}
+
+.ui-page { -webkit-backface-visibility: hidden; } 
+.ui-content {background: url(../img/bg-clear.jpg);background-repeat:repeat;background-position:left top; -webkit-box-shadow: 0px 0px 44px 0px rgba(0,0,0,0.75); -moz-box-shadow: 0px 0px 44px 0px rgba(0,0,0,0.75); box-shadow: 0px 0px 44px 0px rgba(0,0,0,0.75); }
+.ui-field-contain{margin: 0;}
+.ui-btn-icon-left:after, .ui-btn-icon-right:after, .ui-btn-icon-top:after, .ui-btn-icon-bottom:after, .ui-btn-icon-notext:after {background-color: rgba(80, 0, 0,1);border-width: 0px;}
+
+#body-general h2 {font-family:'beneg';font-size:2.4em; text-align:center; padding: 0 10px;color:#200f07;}
+#body-general .label  {font-size:.8em;font-style:italic; padding: 0px 5px 5px 5px;clear:both}
+#body-general .ui-field-contain {padding: 0 5%;border-bottom: 0px;}
+#body-general .ui-input-text input { background:url(../img/pixel-blanc-15.png);}
+#body-general .ui-checkbox input, #body-general .ui-radio input {display:none;}
+#body-general  .ui-btn, #body-general label.ui-btn, #body-general .ui-input-text, #body-general .ui-input-search { border-style: solid;border-width: 1;margin: 0.5em 0;border-color: #8b7661;}
+#body-general option {padding:3px}
+#body-general .doble-check {
+    border-color: #8b7661;
+    border-radius: 0.3em;
+    border-style: solid;
+    border-width: 1px;    
+    margin: 0.5em 1% 0.5em 0;
+    padding: 0.7em;
+    position: relative;
+    font-weight:bold;
+    text-align:left;
+    /*font-size: 0.8em;
+    float: left;
+    width: 43%;*/
+    
+}
+
+/* PORTADA ----------------------------------------- */
+#logo-portada {background: url(../img/top-dark.png);background-repeat:repeat-x;background-position:bottom center;}
+.img-ancho-completo-top {width:65%; margin: 3% 0 10% 0;}
+.img-ancho-completo {width:95%; margin: 10px 0;}
+.portada-btn {width:45%;}
+
+/* PJ ------------------------------------------------ */
+.img-ancho-completo-top-generador {width: 45%; margin: 0 0 4%;}
+
+
+/*menu enemigo */
+
+.btn-enemigo {border-radius: 0.8em; width:70%; margin:5% auto;background: url(../img/top-dark.png);background-repeat:no-repeat;background-position:top center;}
+.btn-enemigo img {margin: 0;}
+
+#body-general .btn-enemigo .ui-btn {border-style: none; border-radius: 0.8em; -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);} /*background-color:#000!important*/
+#body-general .btn-enemigo .ui-btn:hover{border-radius: 0.8em; -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0);-moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0);box-shadow: 0px 0px 10px 0px rgba(0,0,0,0);} 
+#body-general .btn-enemigo .ui-btn:active{border-radius: 0.8em; -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0);
+-moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0);
+box-shadow: 0px 0px 10px 0px rgba(0,0,0,0);} 
+/*Adquirir*/
+.btn-adquirir {border-radius: 0.8em; width:70%; margin:5% auto;}
+.btn-adquirir  img {width: 100%;}
+/* MENU -------------------------------------------- */
+#ev-main-panel{background: url(../img/bg-menu.jpg);background-repeat:repeat-y;background-position:top left;box-shadow: 5px 3px 3px 3px rgba(0, 0, 0, 0.55);}
+.ui-panel {width: 75%;}
+.ui-panel-inner{padding:0;}
+.logo-menu {width:100%; margin:0;}
+.ui-header .ui-btn-icon-notext {/*width:100%;height:100%*/;background-size: 100% 100%;}
+.ui-header .ui-icon-bars:after {background-size: 100% 100%;}
+
+/* Utiles*/
+.separador {clear:both}
+.texto {display:inline;}
+.parrafo{padding:5px 20px 5px 20px;}
+.titulo {font-weight: bold} 
+.centrar {text-align: center;}
+.beneg {font-family: 'beneg';}
+#ev-pj-div-mutilacion { display: block; }
+.ev-enemigos-dado-normal { width: 71px; height: 71px; background-size: 71px; border-radius: 0.8em; background-color: #ffffff; border-color: #8b7661; border-style: solid;border-width: 2px;}
+.ev-enemigos-dado-descartado {  width: 71px; height: 71px; background-size: 71px; }
+#ev-enemigos-pnj-form-temeridad-1,#ev-enemigos-pnj-form-temeridad-2 {float:left;display:block; margin:0 25px;}
+.contenedor-dados {margin: 25px;auto;display:inline-block}
+
+/* Pie --------------------------------------------------- */
+.pie {background-color: #500000;}
+.pie a{background-color: #500000;}
+.btn-pie {border-style:none!important;}
+.ui-footer{height:50px;background-color:#500000;border-width:0;}
+.ui-footer .btn-pie {font-size: 2em;font-weight: normal; line-height: 1;margin: 0 !important;padding: 0;color:#ffe4c6}
+.ui-footer .btn-pie-100 {width: 100%;}
+.ui-footer .btn-pie-50 {width: 50%;}
+.ui-footer .margen-btn-rigth {border-left-style:solid!important;} 
+.ui-footer .margen-btn-left {border-left-style:solid!important;} 
+.ui-footer .btn-pie a{font-size: 24px;}
+.ui-footer .btn-pie a:hover{background-color:#ffe4c6;color:#500000}
+/* responsive ----------------- */
+@media screen and (min-width: 375px) and (max-width: 8000px) {
+.ui-panel {width: 282px;}
+}
+
+@media screen and (min-width: 625px) and (max-width: 8000px) {
+.ui-content,.ui-footer  {width: 640px;}
+body{background-color:#fce7d0}
+}
+
+/*AJUSTES A JQUERY --------------------------------------- */
+.ui-content {padding: 0;}
+.ui-btn-icon-notext.ui-btn-corner-all, .ui-btn-icon-notext.ui-corner-all {border: 0 none;}
+/* ---- */
+.ev-double-checkbox {padding-left: 30px;cursor: pointer;}
+.ev-double-checkbox-pecados-0 { background: url('../img/double-checkbox_pecados_0.png') no-repeat; background-size: 18px 100%; }
+.ev-double-checkbox-pecados-1 { background: url('../img/double-checkbox_pecados_1.png') no-repeat; background-size: 18px 100%; }
+.ev-double-checkbox-pecados-2 { background: url('../img/double-checkbox_pecados_2.png') no-repeat; background-size: 18px 100%; }
+.ev-double-checkbox-infortunios-0 { background: url('../img/double-checkbox_pecados_0.png') no-repeat; background-size: 18px 100%; }
+.ev-double-checkbox-infortunios-1 { background: url('../img/double-checkbox_pecados_1.png') no-repeat; background-size: 18px 100%; }
+.ev-double-checkbox-infortunios-2 { background: url('../img/double-checkbox_infortunios_2.png') no-repeat; background-size: 18px 100%; }
+
