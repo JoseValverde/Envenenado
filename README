@@ -4,7 +4,7 @@ Web proyecto: http://www.patreon.com/valver
 
 1) Quedan pendiente el diseño de la impresión de PDF y su desarrollo. También el desarrollo de la opción para guardar el archivo en el dispositivo.
 2) Falta añadir un segundo div con los resultados para diseño.
-3) Falta hacer que la lista de los Mecenas en Portada, Adquirir y Apoyo sea en orden aleatorio.
+3) Faltan datos sobre los tipos de barcos en sección enemigos/barcos.
 4) Exportaciones. (Android, iOS y web)
 Para Android falta la firma del .apk.
 Para iOS se usará phonegap build.
@@ -13,4 +13,4 @@ La versión actual está orientada a Android e iOS. Una vez acabada se preparar�
 Conclusiones:
 Falta div resultados para pantallas de más de 750px ancho.
 Faltan desarrollar opciones para generar PDF y guardarlo.
-Falta añadir aleatoriedad a los íconos de Mecenas.
+Falta añadir datos sobre tipos de barcos.

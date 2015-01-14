@@ -38,7 +38,7 @@ var ev_envenenado_app = {
 		// binding events
 		this.appendPanel();
 		document.addEventListener('deviceReady', this.onDeviceReady, false);
-		this.onDeviceReady();
+		this.onDeviceReady();	// quitar al final
 	},
 	onDeviceReady: function () {
 		console.log('******** evento \'onDeviceReady\' lanzado');
@@ -670,13 +670,15 @@ var ev_envenenado_app = {
 	randomMecenas: function () {
 		$(document).bind('pagecreate', '#ev-adquirir', function (event, data) {
 			var mecenasArray = [];
-			var mecenasPortadaString = '';
+			var mecenasPortadaApoyoString = '';
 			var mecenasAdquirirString = '';
 			for (var i in ev_envenenado_app.mecenas.mecenas) mecenasArray.push(i);
 			ev_env_shuffle_array(mecenasArray);
 			for (var i = 0; i < mecenasArray.length; i++) {
 				// mecenas en portada y apoyo
-				// ....
+				mecenasPortadaApoyoString += '<a class="ui-link" href="' + ev_envenenado_app.mecenas.mecenas[mecenasArray[i]].link + '" >'
+										   + '<img src="' + ev_envenenado_app.mecenas.mecenas[mecenasArray[i]].img + '" class="portada-btn" title="' + mecenasArray[i] + '" alt="' + mecenasArray[i] + '">'
+										   + '</a>';
 				// mecenas en adquirir
 				if (ev_envenenado_app.mecenas.mecenas[mecenasArray[i]].adquirir) {
 					mecenasAdquirirString += '<div class="centrar btn-adquirir">'
@@ -686,10 +688,10 @@ var ev_envenenado_app = {
 										   + '</div>';
 				}
 			}
-			// ....
-			var divMecenasAdquirir = document.getElementById('ev-envenenados-lista-mecenas-adquirir');
-			divMecenasAdquirir.innerHTML = mecenasAdquirirString;
-			// ....
+			//
+			document.getElementById('ev-envenenados-lista-mecenas-portada').innerHTML = mecenasPortadaApoyoString;
+			document.getElementById('ev-envenenados-lista-mecenas-adquirir').innerHTML = mecenasAdquirirString;
+			document.getElementById('ev-envenenados-lista-mecenas-apoyo').innerHTML = mecenasPortadaApoyoString;
 		});
 	}
 
