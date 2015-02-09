@@ -1,4 +1,346 @@
 
+
+
+function ev_PDF () {
+	// create file
+	var doc = new jsPDF();
+	var img = 'data:image/png;base64,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';
+	doc.addImage(img, 'JPEG', 0, 0, 200, 196);
+	doc.text(20, 20, 'TEST!');
+	doc.text(20, 40, 'ASDFASDFasdfds dsafsd');
+	var pdf_file = doc.output();
+	//	--------------------------------
+/*	var length = pdf_file.length,
+	arrBuffer = new Uint8Array(new ArrayBuffer(length));
+	for (var i = 0; i < length; i++) arrBuffer[i] = pdf_file.charCodeAt(i);
+	// Overwrite the output variable with a blob
+	pdf_file = new Blob([arrBuffer], {type: "application/pdf"});
+*/	//	--------------------------------
+//	console.log(pdf_file);
+	var file_name = '';
+	var prompt_text = 'nombre para el archivo?';
+	while (!file_name.length){
+		file_name = prompt(prompt_text);
+		console.log('file_name:' + file_name);
+		console.log('file_name.length:' + file_name.length);
+		if (!file_name || !file_name.length) prompt_text = 'nombre no válido';
+	}
+	if (file_name) {
+		file_name += '.pdf';
+		ev_env_saveFile(file_name, pdf_file);
+	}
+}
+
+function ev_env_PDF (p) {
+	var file_name = '';
+	var doc = new jsPDF();
+	switch (p) {
+		case 'pj': file_name = ev_env_pj_pdf(doc); break;
+		case 'daga': file_name = ev_env_daga_pdf(doc); break;
+		case 'pnj': file_name = ev_env_pnj_pdf(doc); break;
+		case 'grupo': file_name = ev_env_grupo_pdf(doc); break;
+		case 'barco': file_name = ev_env_barco_pdf(doc); break;
+		case 'fortaleza': file_name = ev_env_fortaleza_pdf(doc); break;
+		default: break;
+	}
+	console.dir(doc);
+	pdf_file = doc.output('dataurlnewwindow');
+//	if (file_name) ev_env_saveFile(file_name, pdf_file);
+}
+
+function ev_env_saveFile (name, file) {
+	window.requestFileSystem(
+		window.LocalFileSystem.PERSISTENT,
+		1024 *1024,
+		function (fileSystem) {
+			fileSystem.root.getFile(
+				name,
+				{create: true},
+				function (fileEntry) {
+					fileEntry.createWriter(
+						function (writer) {
+							writer.write(file);
+							console.log(name + ' file creation succes');
+							alert('PDF guardado en SDCARD');
+						}
+					);
+				},
+				function () {console.log('fileSystem.root.getFile failed');}
+			);
+		},
+		function () {console.log('window.requestFileSystem failed');}
+	);
+}
+
+
+/*
+console.clear();
+var v = ev_envenenado_app.vars;
+console.dir({pj: v.pj});
+console.dir({daga: v.dt});
+console.dir({pnj: v.enemigos.pnj});
+console.dir({grupos: v.enemigos.grupos});
+console.dir({barcos: v.enemigos.barcos});
+console.dir({fortalezas: v.enemigos.fortalezas});
+*/
+
+function ev_env_pj_pdf (doc) {
+	var pj = ev_envenenado_app.vars.pj;
+	var file_name = 'pj-' + pj.nombre + '.pdf';
+	doc.setFontSize(14);
+	doc.setFontStyle('normal');
+	doc.text(20, 29, 'Mi nombre es'); doc.setFontSize(20); doc.text(52, 29, pj.nombre + '.');
+	doc.setFontSize(14);
+	doc.setFontStyle('bold');
+	doc.text(20, 39, 'Soy un pirata y he aqu\xED mi confesi\xF3n:');
+	doc.setFontStyle('normal');
+	var str = 'He servido como Contramaestre';
+	if (pj.segundoACargo) str += ', segundo a cargo';
+	str += ' en La Daga, bajo el mando del Capit\xE1n Jonathan Pallor, llamado Azufre Jack.';
+	doc.text(20, 45, ev_env_strParrafo(str, 70));
+	doc.setFontStyle('bold');		doc.text(20, 63, 'Perfil:');
+	doc.setFontStyle('normal');		doc.text(35, 63, pj.puntosPerfil.toString());
+	doc.setFontStyle('bold');		doc.text(41, 63, 'Temeridad:');
+	doc.setFontStyle('normal');		doc.text(69, 63, pj.temeridad.toString());
+	doc.setFontStyle('bold');		doc.text(75, 63, 'Brutalidad:');
+	doc.setFontStyle('normal');		doc.text(102, 63, pj.brutalidad.toString());
+	doc.setFontStyle('bold');		doc.text(108, 63, 'Alma:');
+	doc.setFontStyle('normal');		doc.text(123, 63, pj.alma.toString());
+	doc.setFontStyle('bold');		doc.text(129, 63, 'Diablo:');
+	doc.setFontStyle('normal');		doc.text(147, 63, pj.diablo.toString());
+	doc.setFontStyle('bold');		doc.text(153, 63, 'Ambici\xF3n:');
+	doc.setFontStyle('normal');		doc.text(178, 63, pj.ambicion.toString());
+	// pecados
+	doc.setFontStyle('bold');		doc.text(20, 76, 'He pecado...');
+	var names = {
+		'adulterio': 'adulterio',
+		'asesinato': 'asesinato',
+		'blasfemia': 'blasfemia',
+		'idolatria': 'idolatr\xEDa',
+		'motin': 'mot\xEDn',
+		'robo': 'robo',
+		'sodomia': 'sodom\xEDa',
+		'violacion': 'violaci\xF3n'
+	};
+	var resArray = [];
+	for (var i in pj.pecados) if (pj.pecados[i] != 0) resArray.push(names[i]);
+	doc.setFontStyle('normal');		doc.text(20, 83, ev_env_arrayToString(resArray));
+	// infortunios
+	doc.setFontStyle('bold');		doc.text(20, 101, 'He sufrido infortunios...');
+	names = {
+		'arrestado': 'arrestado',
+		'condenado': 'condenado',
+		'encarcelado': 'encarcelado',
+		'intentodeasesinato': 'intento de asesinato',
+		'latigazos': 'latigazos',
+		'maldito': 'maldito',
+		'marcado': 'marcado',
+		'mutilado': 'mutilado',
+		'paliza': 'paliza',
+		'repudiado': 'repudiado',
+		'reclutadoalafuerza': 'reclutado a la fuerza',
+		'torturado': 'torturado',
+		'violado': 'violado'
+	};
+	resArray = [];
+	for (var i in pj.infortunios) if (pj.infortunios[i] > 0) {
+		var str = names[i];
+		if (pj.infortunios[i] == 2) str += ' (X)';
+		resArray.push(str);
+	}
+	doc.setFontStyle('normal');		doc.text(20, 108, ev_env_arrayToString(resArray));
+	// XXX
+	doc.text(20, 129, pj.xxx);
+	// ambiciones
+	doc.setFontStyle('bold');		doc.text(20, 141, 'Ambiciono...');
+	names = {
+		'sercapitan': 'ser capit\xE1n',
+		'tenertierras': 'tener tierras',
+		'serperdonado': 'ser perdonado',
+		'vivirparasiempre': 'vivir para siempre',
+		'serrecordadoparasiempre': 'ser recordado para siempre',
+		'seradmiradoporlasociedad': 'ser admirado por la sociedad',
+		'vengarsedealguien': 'vengarme de alguien',
+		'vengarsedealguiendemejorposicion': 'vengarme de alguien de mejor posici\xF3n',
+		'fornicarconelpiratadeotrojugador': 'fornicar con el pirata de otro jugador',
+		'fornicarconhijaohijodealguiendemejorposicion': 'fornicar con hija o hijo de alguien de mejor posici\xF3n',
+		'escupiralacaradedios': 'escupir a la cara de dios',
+		'escupiralacaradeldiablo': 'escupir a la cara del diablo'
+	};
+	resArray = [];
+	for (var i in pj.ambiciones) if (pj.ambiciones[i]) resArray.push(names[i]);
+	if (!resArray.length) resArray.push('Nada');
+	doc.setFontStyle('normal');		doc.text(20, 148, ev_env_arrayToString(resArray));
+	// perfil
+	doc.setFontStyle('bold');		doc.text(20, 185, 'Y voy armado con...');
+	resArray = [];
+	for (var i in pj.perfil) {
+		if ('boolean' == typeof(pj.perfil[i])) if (pj.perfil[i]) resArray.push(i);
+		if ('string' == typeof(pj.perfil[i])) if ('' != pj.perfil[i]) resArray.push(pj.perfil[i]);
+	}
+	if (!resArray.length) resArray.push('Nada');
+	doc.setFontStyle('normal');		doc.text(20, 192, ev_env_arrayToString(resArray));
+	return file_name;
+}
+
+function ev_env_daga_pdf (doc) {
+	var dt = ev_envenenado_app.vars.dt;
+	var file_name = 'la-daga.pdf';
+	doc.setFontSize(16);
+	doc.setFontStyle('bold');
+	doc.text(20, 29, 'La Daga.');
+	doc.setFontSize(14);
+	doc.setFontStyle('normal');
+	var daga = 'La Daga es un balandro de tipo bermuda, con dos m\xE1stiles. Por defecto tiene 16 ca\xF1ones de 4 y 6 libras y una tripulaci\xF3n de 80 hombres.';
+	doc.text(20, 39, ev_env_strParrafo(daga, 70));
+	var resArray = [];
+	if (dt.daga.select1) resArray.push(dt.daga.select1);
+	if (dt.daga.select2) resArray.push(dt.daga.select2);
+	if (resArray.length) doc.text(20, 54, ev_env_arrayToString(resArray));
+	doc.setFontStyle('bold');		doc.text(20, 66, 'Perfil del barco:');
+	doc.setFontStyle('normal');		doc.text(58, 66, dt.daga.perfil.toString());
+	if (dt.daga.puntoFuerte.length) {
+		var puntoFuerte = 'El punto fuerte de La Daga es ' + dt.daga.puntoFuerte + '.';
+		doc.text(20, 76, ev_env_strParrafo(puntoFuerte, 70));
+	}
+	doc.setFontSize(16);
+	doc.setFontStyle('bold');
+	doc.text(20, 95, 'La Daga. Tripulaci\xF3n.');
+	doc.setFontSize(14);
+	doc.setFontStyle('normal');
+	// dt.tripulacion.select1 + .select2
+	resArray = [];
+	if (dt.tripulacion.select1) resArray.push(dt.tripulacion.select1);
+	if (dt.tripulacion.select2) resArray.push(dt.tripulacion.select2);
+	if (resArray.length) doc.text(20, 105, ev_env_arrayToString(resArray));
+	// .select3
+	if (dt.tripulacion.select3) {
+		var select3Str = 'Adem\xE1s ' + dt.tripulacion.select3 + '.';
+		doc.text(20, 120, ev_env_strParrafo(select3Str, 70));
+	}
+	// .perfil
+	doc.setFontStyle('bold');		doc.text(20, 135, 'Perfil de la tripulaci\xF3n:');
+	doc.setFontStyle('normal');		doc.text(74, 135, dt.tripulacion.perfil.toString());
+	return file_name;
+}
+
+function ev_env_pnj_pdf (doc) {
+	var pnj = ev_envenenado_app.vars.enemigos.pnj;
+	var file_name = 'pnj-' + pnj.nombre + '.pdf';
+	doc.setFontSize(14);
+	doc.setFontStyle('bold');		doc.text(20, 29, 'Nombre:');
+	doc.setFontStyle('normal');		doc.text(42, 29, pnj.nombre);
+	doc.setFontStyle('bold');		doc.text(20, 39, 'Cargo:');
+	doc.setFontStyle('normal');		doc.text(38, 39, pnj.cargo);
+	var resArray = [];
+	if (pnj.perfil1) resArray.push(pnj.perfil1);
+	if (pnj.perfil2) resArray.push(pnj.perfil2);
+	if (pnj.perfil3) resArray.push(pnj.perfil3);
+	if (resArray.length) doc.text(20, 49, ev_env_arrayToString(resArray));
+	doc.setFontStyle('bold');		doc.text(20, 69, 'Temeridad:');
+	doc.setFontStyle('normal');		doc.text(48, 69, pnj.temeridad.toString());
+	doc.setFontStyle('bold');		doc.text(20, 79, 'Perfil:');
+	doc.setFontStyle('normal');		doc.text(35, 79, pnj.perfil.toString());
+	resArray = [];
+	if (pnj.debil) resArray.push('d\xE9bil');
+	if (pnj.discapacidad) resArray.push(pnj.discapacidad);
+	if (resArray.length) doc.text(20, 89, 'Es ' + ev_env_arrayToString(resArray, false));
+	return file_name;
+}
+
+function ev_env_grupo_pdf (doc) {
+	var grupos = ev_envenenado_app.vars.enemigos.grupos;
+	var file_name = 'grupo-' + grupos.nombre + '.pdf';
+	doc.setFontSize(20);
+	doc.text(20, 29, grupos.nombre);
+	doc.setFontSize(14);
+	var resArray = [];
+	if (grupos.select1) resArray.push(grupos.select1);
+	if (grupos.select2) resArray.push(grupos.select2);
+	if (grupos.select3) resArray.push(grupos.select3);
+	if (grupos.select4) resArray.push(grupos.select4);
+	if (grupos.select5) resArray.push(grupos.select5);
+	if (grupos.select6) resArray.push(grupos.select6);
+	if (resArray.length) doc.text(20, 39, ev_env_arrayToString(resArray)); 
+	doc.setFontStyle('bold');		doc.text(20, 84, 'Perfil:');
+	doc.setFontStyle('normal');		doc.text(35, 84, grupos.perfil.toString());
+	return file_name;
+}
+
+function ev_env_barco_pdf (doc) {
+	var barcos = ev_envenenado_app.vars.enemigos.barcos;
+	var file_name = 'barco-' + barcos.nombre + '.pdf';
+	doc.setFontSize(20);
+	doc.text(20, 29, barcos.nombre);
+	doc.setFontSize(14);
+	var tiposBarcos = {
+		'embarcacionMercante': 'embarcaci\xF3n mercante',
+		'balandroDeGuerra': 'balandro de guerra',
+		'balandroMercante': 'balandro mercante',
+		'barcoDeGuerra': 'barco de guerra',
+		'barcoMercante': 'barco mercante',
+		'navioLineaArmada': 'nav\xEDo de l\xEDnea de la armada',
+		'embarcacionGuerraNormal': 'embarcaci\xF3n de guerra normal'
+	};
+	var str = 'Es un ' + tiposBarcos[barcos.tipo] + ' de ' + barcos.mastiles + ' m\xE1stiles y de ' + barcos.canones + ' ca\xF1ones.';
+	doc.text(20, 39, ev_env_strParrafo(str, 70));
+	var checkbox = {
+		'tieneunamacabrareputacion' : 'tiene una macabra reputaci\xF3n',
+		'esimponente' : 'es imponente',
+		'esafortunada' : 'es afortunada',
+		'esdesolidamanufactura' : 'es de s\xF3lida manifactura',
+		'esrapida' : 'es r\xE1pida',
+		'estafuertementearmada' : 'est\xE1 fuertemente armada',
+		'esmaniobrable' : 'es maniobrable',
+		'estasobrecargada': 'est\xE1 sobrecargada',
+		'esfragil': 'es fr\xE1gil',
+		'tienefugas': 'tiene fugas',
+		'estapobrementearmada': 'est\xE1 pobremente armada',
+		'estavieja': 'est\xE1 vieja',
+		'lefaltatripulacion': 'le falta tripulaci\xF3n',
+		'eslenta': 'es lenta'
+	};
+	var resArray = [];
+	for (var i in barcos.cbGrupo1) if (barcos.cbGrupo1[i]) resArray.push(checkbox[i]);
+	for (var i in barcos.cbGrupo2) if (barcos.cbGrupo2[i]) resArray.push(checkbox[i]);
+	if (resArray.length) doc.text(20, 54, ev_env_arrayToString(resArray));
+	doc.setFontStyle('bold');		doc.text(20, 69, 'Perfil:');
+	doc.setFontStyle('normal');		doc.text(35, 69, barcos.perfil.toString());
+	//
+	return file_name;
+}
+
+function ev_env_fortaleza_pdf (doc) {
+	var fortalezas = ev_envenenado_app.vars.enemigos.fortalezas;
+	var file_name = 'fortaleza-' + fortalezas.nombre + '.pdf';
+	doc.setFontSize(20);
+	doc.text(20, 29, fortalezas.nombre);
+	doc.setFontSize(14);
+	var checkbox = {
+		'tieneunabuenaposicion': 'tiene una buena posici\xF3n',
+		'tieneunamacabrareputacion': 'tiene una macabra reputaci\xF3n',
+		'esdesolidaconstruccion': 'es de s\xF3lida construcci\xF3n',
+		'estafuertementearmada': 'est\xE1 fuertemente armada',
+		'esimponente': 'es imponente',
+		'essolodemaderayladrillosinpiedra': 'es s\xF3lo de madera y ladrillo, sin piedra',
+		'esaccesibledesdecualquierlado': 'es accesible desde cualquier lado',
+		'estapobrementearmada': 'est\xE1 pobremente armada',
+		'estavieja': 'est\xE1 vieja',
+		'lefaltanhombres': 'le faltan hombres'
+	};
+	var resArray = [];
+	for (var i in fortalezas.cbGrupo1) if (fortalezas.cbGrupo1[i]) resArray.push(checkbox[i]);
+	for (var i in fortalezas.cbGrupo2) if (fortalezas.cbGrupo2[i]) resArray.push(checkbox[i]);
+	if (resArray.length) doc.text(20, 39, ev_env_arrayToString(resArray));
+	doc.setFontStyle('bold');		doc.text(20, 59, 'Perfil:');
+	doc.setFontStyle('normal');		doc.text(35, 59, fortalezas.perfil.toString());
+	//
+	return file_name;
+}
+
+
+
+
 //	--------------------------------
 
 function openLink (url) {
@@ -300,7 +642,9 @@ function ev_env_dagaPerfil () {
 	if (ev_envenenado_app.vars.dt.daga.select2) { perfil++; resArray.push(ev_envenenado_app.vars.dt.daga.select2); }
 	ev_envenenado_app.vars.dt.daga.perfil = perfil;
 	document.getElementById('ev-dt-daga-resultado-perfildelbarco').innerHTML = perfil;
-	if (resArray.length) ev_env_showArray(resArray, document.getElementById('ev-dt-daga-resultado'));
+	var divDagaResultado = document.getElementById('ev-dt-daga-resultado');
+	if (resArray.length) ev_env_showArray(resArray, divDagaResultado);
+	else divDagaResultado.innerHTML = '';
 	//
 	var str2 = '';
 	if (ev_envenenado_app.vars.dt.daga.puntoFuerte) str2 = 'El punto fuerte de La Daga es ' + ev_envenenado_app.vars.dt.daga.puntoFuerte + '.'; 
@@ -317,7 +661,9 @@ function ev_env_tripulacionPerfil () {
 	if (ev_envenenado_app.vars.dt.tripulacion.select2) { perfil++; resArray.push(ev_envenenado_app.vars.dt.tripulacion.select2); }
 	if (ev_envenenado_app.vars.dt.tripulacion.select3) { perfil--; str2 = 'Adem&aacute;s ' + ev_envenenado_app.vars.dt.tripulacion.select3 + '.'; }
 	ev_envenenado_app.vars.dt.tripulacion.perfil = perfil;
-	if (resArray.length) ev_env_showArray(resArray, document.getElementById('ev-dt-tripulacion-resultado'));
+	var divTripulacionResultado = document.getElementById('ev-dt-tripulacion-resultado');
+	if (resArray.length) ev_env_showArray(resArray, divTripulacionResultado);
+	else divTripulacionResultado.innerHTML = '';
 	document.getElementById('ev-dt-tripulacion-resultado-select3').innerHTML = str2;
 	document.getElementById('ev-dt-daga-resultado-perfildelatripulacion').innerHTML = perfil;
 }
@@ -546,4 +892,45 @@ function ev_env_shuffle_array (array) {
 		array[randomIndex] = temporaryValue;
 	}
 	return array;
+}
+
+function ev_env_arrayToString(array, cap) {
+	if (!array.length) array.push('ninguno');
+	if (typeof cap == 'boolean') { if (cap) array[0] = ev_env_capitalizeFirstLetter(array[0]); }
+	else array[0] = ev_env_capitalizeFirstLetter(array[0]);
+	var str = array.join(', ') + '.';
+	var lastComma = str.lastIndexOf(',');
+	if (lastComma > -1) {
+		var y = 'y';
+		if (str[lastComma +2] == 'i') y = 'e';
+		str = str.slice(0, lastComma) + ' ' + y + str.slice(lastComma +1);
+		var maxLineLength = 70;
+		return ev_env_strParrafo(str, maxLineLength);
+	}
+	else return str;
+}
+
+function ev_env_strParrafo (str, maxLineLength) {
+	var str1 = null;
+	var str2 = null;
+	if (str.length > maxLineLength) {
+		str1 = str.slice(0, maxLineLength);
+		str2 = str.slice(maxLineLength);
+		var lastSpace = str1.lastIndexOf(' ');
+		if (lastSpace != -1) str1 = str1.slice(0, lastSpace +1).concat('\n'.concat(str1.slice(lastSpace +1)));
+		str2 = ev_env_strParrafo(str2, maxLineLength);
+		return str1.concat(str2);
+	}
+	else return str;
+}
+
+function createXML () {
+	var doc = document.createElement('div');
+	var mainNode = document.createElement('mainNode');
+	mainNode.appendChild(document.createElement('subNode'));
+	mainNode.appendChild(document.createElement('subNode'));
+	mainNode.appendChild(document.createElement('subNode'));
+	doc.appendChild(mainNode);
+
+	alert('<?xml version="1.0"?>' + doc.innerHTML);
 }

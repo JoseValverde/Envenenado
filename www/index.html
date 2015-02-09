@@ -301,7 +301,7 @@
 				<!-- footer -->
 				<div data-role="footer" >
 					<a href="#ev-pj" class="ui-btn ui-btn-left btn-pie beneg">Volver</a>
-			<!--	<a href="#" onclick="toPDF()" class="ui-btn ui-btn-right btn-pie beneg">PDF</a>		-->
+					<a href="#" onclick="ev_env_PDF('pj')" class="ui-btn ui-btn-right btn-pie beneg">PDF</a>
 				</div>
 		</div>
 
@@ -433,6 +433,7 @@
 				<!-- footer -->
 				<div data-role="footer">
 					<a href="#ev-daga-tripulacion" class="ui-btn ui-btn-left btn-pie beneg">Volver</a>
+					<a href="#" onclick="ev_env_PDF('daga')" class="ui-btn ui-btn-right btn-pie beneg">PDF</a>
 				</div>
 		</div>
 
@@ -497,7 +498,7 @@
 					</div>
 					<h2>Cargo</h2>
 					<div data-role="fieldcontain">
-						<div class="label">Piratas, Capitán, oficial, alguacil, gobernador, escolta, soldado, etc.</div>
+						<div class="label">Piratas, Capit&aacute;n, oficial, alguacil, gobernador, escolta, soldado, etc.</div>
 						<input type="text" name="ev-enemigos-pnj-form-cargo" />
 					</div>
 					<h2>Temeridad</h2>
@@ -600,6 +601,7 @@
 				<!-- footer -->
 				<div data-role="footer">
 					<a href="#ev-enemigos-pnj" class="ui-btn ui-btn-left  btn-pie beneg">Volver</a>
+					<a href="#" onclick="ev_env_PDF('pnj')" class="ui-btn ui-btn-right btn-pie beneg">PDF</a>
 				</div>
 		</div>
 
@@ -733,7 +735,8 @@
 				</div>
 				<!-- footer -->
 				<div data-role="footer">
-					<a href="#ev-enemigos-grupos" class="ui-btn ui-btn-right  btn-pie beneg">Volver</a>
+					<a href="#ev-enemigos-grupos" class="ui-btn ui-btn-left  btn-pie beneg">Volver</a>
+					<a href="#" onclick="ev_env_PDF('grupo')" class="ui-btn ui-btn-right btn-pie beneg">PDF</a>
 				</div>
 		</div>
 
@@ -759,8 +762,10 @@
 				<div class="ui-field-contain" data-role="fieldcontain">
 				<select name="ev-enemigos-barcos-form-tipo">
 						<option value="embarcacionMercante">Embarcaci&oacute;n mercante</option>
-						<option value="balandro">Balandro</option>
-						<option value="barco">Barco</option>
+						<option value="balandroDeGuerra">Balandro de guerra</option>
+						<option value="balandroMercante">Balandro mercante</option>
+						<option value="barcoDeGuerra">Barco de guerra</option>
+						<option value="barcoMercante">Barco mercante</option>
 						<option value="navioLineaArmada">Nav&iacute;o de l&iacute;nea de la armada</option>
 						<option value="embarcacionGuerraNormal">Embarcaci&oacute;n de guerra normal</option>
 					</select>
@@ -829,7 +834,8 @@
 				</div>
 				<!-- footer -->
 				<div data-role="footer">
-					<a href="#ev-enemigos-barcos" class="ui-btn ui-btn-right btn-pie beneg">Volver</a>
+					<a href="#ev-enemigos-barcos" class="ui-btn ui-btn-left btn-pie beneg">Volver</a>
+					<a href="#" onclick="ev_env_PDF('barco')" class="ui-btn ui-btn-right btn-pie beneg">PDF</a>
 				</div>
 		</div>
 
@@ -912,7 +918,8 @@
 				</div>
 				<!-- footer -->
 				<div data-role="footer">
-					<a href="#ev-enemigos-fortalezas" class="ui-btn ui-btn-right btn-pie beneg">Volver</a>
+					<a href="#ev-enemigos-fortalezas" class="ui-btn ui-btn-left btn-pie beneg">Volver</a>
+					<a href="#" onclick="ev_env_PDF('fortaleza')" class="ui-btn ui-btn-right btn-pie beneg">PDF</a>
 				</div>
 		</div>
 
@@ -998,7 +1005,7 @@
 		<script type="text/javascript" src="cordova.js"></script>
 <!--	<script type="text/javascript" src="js/fastclick.js"></script>				-->
 		<script type="text/javascript" src="jquery-1.11.1.min.js"></script>
-<!--	<script type="text/javascript" src="js/jspdf.min.js"></script>					-->
+		<script type="text/javascript" src="js/jspdf.min.js"></script>
 		<script type="text/javascript" src="js/script2.js"></script>
 		<script type="text/javascript" src="js/script.js"></script>
 		<script type="text/javascript" src="jquery.mobile-1.4.4.js"></script>
