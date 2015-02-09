@@ -1,16 +1,13 @@
-14/01/2015 Versión: 0.1
+14/01/2015 Versión: 0.2
 
 Web proyecto: http://www.patreon.com/valver
 
-1) Quedan pendiente el diseño de la impresión de PDF y su desarrollo. También el desarrollo de la opción para guardar el archivo en el dispositivo.
-2) Falta añadir un segundo div con los resultados para diseño.
-3) Faltan datos sobre los tipos de barcos en sección enemigos/barcos.
-4) Exportaciones. (Android, iOS y web)
-Para Android falta la firma del .apk.
-Para iOS se usará phonegap build.
+1) Falta añadir un segundo div con los resultados para diseño.
+2) Faltan datos sobre los tipos de barcos en sección enemigos/barcos.
+3) Exportaciones. (Android, iOS y web)
+Para iOS se usará phonegap build. Hay problemas con el tema de los certificados.
 La versión actual está orientada a Android e iOS. Una vez acabada se preparará la API para su inserción en web.
 
 Conclusiones:
 Falta div resultados para pantallas de más de 750px ancho.
-Faltan desarrollar opciones para generar PDF y guardarlo.
 Falta añadir datos sobre tipos de barcos.
