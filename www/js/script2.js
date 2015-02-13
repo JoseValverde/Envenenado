@@ -1,6 +1,32 @@
 
 
 
+function ev_env_XML (p) {
+	var v = null;
+	switch (p) {
+		case 'pj': v = {'pj': ev_envenenado_app.vars.pj}; break;
+		case 'daga': v = {'daga': ev_envenenado_app.vars.dt}; break;
+		case 'pnj': v = {'pnj': ev_envenenado_app.vars.enemigs.pnj}; break;
+		case 'grupo': v = {'grupo': ev_envenenado_app.vars.enemigos.grupos}; break;
+		case 'barco': v = {'barco': ev_envenenado_app.vars.enemigos.barcos}; break;
+		case 'fortaleza': v = {'fortaleza': ev_envenenado_app.vars.enemigos.fortalezas}; break;
+		default: break;
+	}
+	alert('<?xml version="1.0"?>' + ev_env_toXML(v));
+}
+
+function ev_env_toXML (o) {
+	var ret = '';
+	for (var i in o) {
+		ret += '<' + i + '>';
+		if (typeof o[i] == 'object') ret += ev_env_toXML(o[i]);
+		else ret += o[i];
+		ret += '</' + i + '>';
+	}
+	return ret;
+}
+
+
 function ev_PDF () {
 	// create file
 	var doc = new jsPDF();
@@ -44,8 +70,8 @@ function ev_env_PDF (p) {
 		default: break;
 	}
 	console.dir(doc);
-	pdf_file = doc.output('dataurlnewwindow');
-//	if (file_name) ev_env_saveFile(file_name, pdf_file);
+//	pdf_file = doc.output('dataurlnewwindow');
+	if (file_name) ev_env_saveFile(file_name, pdf_file);
 }
 
 function ev_env_saveFile (name, file) {
