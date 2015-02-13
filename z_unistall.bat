@@ -1,1 +1,0 @@
-adb -d uninstall com.ev.envenenado

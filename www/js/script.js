@@ -5,13 +5,12 @@ var ev_envenenado_app = {
 	vars: {},
 	// nombre: {n:nombre completo, m:mástiles, c:cañones, m1:max1, m2:max2, dp:perfil_por_defecto}
 	ev_env_barcosTipos: {
-		'embarcacionMercante': {'n': 'embarcaci&oacute;n mercante', 'm': 0, 'c': 0, 'm1': 1, 'm2': 3, 'dp': 0},
-		'balandroDeGuerra': {'n': 'balandro de guerra', 'm': 'uno o dos', 'c': 'de 10 a 20', 'm1': 0, 'm2': 0, 'dp': 8},
-		'balandroMercante': {'n': 'balandro mercante', 'm': 'uno o dos', 'c': 'de 4 a 8', 'm1': 1, 'm2': 3, 'dp': 8},
-		'barcoDeGuerra': {'n': 'barco de guerra', 'm': 3, 'c': 'de 20 a 40', 'm1': 0, 'm2': 0, 'dp': 10},
-		'barcoMercante': {'n': 'barco mercante', 'm': 3, 'c': 10, 'm1': 1, 'm2': 3, 'dp': 10},
-		'navioLineaArmada': {'n': 'nav&iacute;o de l&iacute;nea de la armada', 'm': 0, 'c': 'de 40 a 60', 'm1': 0, 'm2': 0, 'dp': 12},
-		'embarcacionGuerraNormal': {'n': 'embarcaci&oacute;n de guerra normal', 'm': 0, 'c': 0, 'm1': 0, 'm2': 0, 'dp': 0}
+		'balandroMercante': {n: 'balandro mercante', m: '1 o 2', c: '4 a 8', m1: 1, m2: 3, dp: 8},
+		'balandroGuerra': {n: 'balandro de guerra', m: '1 o 2', c: '10 a 20', m1: 3, m2: 2, dp: 8},
+		'barcoMercante': {n: 'barco mercante', m: 3, c: 10, m1: 1, m2: 3, dp: 10},
+		'barcoGuerra': {n: 'barco de guerra', m: 3, c: '20 a 40', m1: 3, m2: 2, dp: 10},
+		'navioLineaArmadaMercante': {n: 'nav&iacute;o de l&iacute;nea de la armada mercante', m: 3, c: '40 a 60', m1: 1, m2: 3, dp: 12},
+		'navioLineaArmadaGuerra': {n: 'nav&iacute;o de l&iacute;nea de la armada de guerra', m: 3, c: '40 a 60', m1: 3, m2: 2, dp: 12}
 	},
 	patrones: {
 		'once': false,
@@ -40,7 +39,7 @@ var ev_envenenado_app = {
 		// binding events
 		this.appendPanel();
 		document.addEventListener('deviceReady', this.onDeviceReady, false);
-		this.onDeviceReady();	// ésto es para que inicie la app al probar el index.html en un navegador de ordenador. quitar al final
+	//	this.onDeviceReady();	// ésto es para que inicie la app al probar el index.html en un navegador de ordenador. quitar al final
 	},
 	onDeviceReady: function () {
 		console.log('******** evento \'onDeviceReady\' lanzado');
@@ -668,10 +667,6 @@ var ev_envenenado_app = {
 			ev_env_fortalezasCheckboxList(fortalezas_checkbox_list_2, 2, 2);
 			ev_env_fortalezasCheckboxResult();
 			console.log('******** Enemigos inicializado');
-			console.dir({pnj: ev_envenenado_app.vars.enemigos.pnj});
-			console.dir({grupos: ev_envenenado_app.vars.enemigos.grupos});
-			console.dir({barcos: ev_envenenado_app.vars.enemigos.barcos});
-			console.dir({fortalezas: ev_envenenado_app.vars.enemigos.fortalezas});
 		});
 	},
 

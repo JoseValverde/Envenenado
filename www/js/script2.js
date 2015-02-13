@@ -70,7 +70,7 @@ function ev_env_PDF (p) {
 		default: break;
 	}
 	console.dir(doc);
-//	pdf_file = doc.output('dataurlnewwindow');
+	pdf_file = doc.output();
 	if (file_name) ev_env_saveFile(file_name, pdf_file);
 }
 
@@ -87,7 +87,7 @@ function ev_env_saveFile (name, file) {
 						function (writer) {
 							writer.write(file);
 							console.log(name + ' file creation succes');
-							alert('PDF guardado en SDCARD');
+							alert('PDF guardado en dispositivo.');
 						}
 					);
 				},
@@ -300,13 +300,12 @@ function ev_env_barco_pdf (doc) {
 	doc.text(20, 29, barcos.nombre);
 	doc.setFontSize(14);
 	var tiposBarcos = {
-		'embarcacionMercante': 'embarcaci\xF3n mercante',
-		'balandroDeGuerra': 'balandro de guerra',
 		'balandroMercante': 'balandro mercante',
-		'barcoDeGuerra': 'barco de guerra',
+		'balandroGuerra': 'balandro de guerra',
 		'barcoMercante': 'barco mercante',
-		'navioLineaArmada': 'nav\xEDo de l\xEDnea de la armada',
-		'embarcacionGuerraNormal': 'embarcaci\xF3n de guerra normal'
+		'barcoGuerra': 'barco de guerra',
+		'navioLineaArmadaMercante': 'nav\xEDo; de l\xEDnea de la armada mercante',
+		'navioLineaArmadaGuerra': 'nav\xEDo; de l\xEDnea de la armada de guerra'
 	};
 	var str = 'Es un ' + tiposBarcos[barcos.tipo] + ' de ' + barcos.mastiles + ' m\xE1stiles y de ' + barcos.canones + ' ca\xF1ones.';
 	doc.text(20, 39, ev_env_strParrafo(str, 70));
