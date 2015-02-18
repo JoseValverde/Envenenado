@@ -87,7 +87,7 @@ function ev_env_saveFile (name, file) {
 						function (writer) {
 							writer.write(file);
 							console.log(name + ' file creation succes');
-							alert('PDF guardado en dispositivo.');
+							alert('Se ha creado el archivo ' + name + ' en la SDCARD.');
 						}
 					);
 				},
@@ -368,7 +368,8 @@ function ev_env_fortaleza_pdf (doc) {
 
 //	--------------------------------
 
-function openLink (url) {
+function ev_env_openLink (url) {
+	console.log('Abriendo el enlace: ' + url);
 	var ref = window.open(url, '_system', 'location=yes');
 }
 

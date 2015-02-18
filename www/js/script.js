@@ -27,10 +27,10 @@ var ev_envenenado_app = {
 	mecenas: {
 		'once': false,
 		'mecenas': {
-			'Tesoros de la Marca': {'img':'img/logo-tesoros.png', 'link': 'http://tesorosdelamarca.com/buscar?controller=search&orderby=position&orderway=desc&search_query=envenenado&submit_search=+', 'adquirir':true},
-			'Dracotienda': {'img':'img/logo--dracotienda.png', 'link': 'http://www.dracotienda.com/envenenados-fantasmas-asesinos-p-13373.html', 'adquirir':true},
-			'RolGratis': {'img':'img/logo-rolgratis.png', 'link': 'http://rolgratis.org', 'adquirir':false},
-			'Summum Creator': {'img':'img/logo-summum.png', 'link': 'http://www.summumcreator.es', 'adquirir':false}
+			'Tesoros de la Marca': {'img':'img/logo-tesoros.png', 'link': 'http://tesorosdelamarca.com/buscar?controller=search&orderby=position&orderway=desc&search_query=envenenado&submit_search=+', 'adquirir': true},
+			'Dracotienda': {'img':'img/logo--dracotienda.png', 'link': 'http://www.dracotienda.com/envenenados-fantasmas-asesinos-p-13373.html', 'adquirir': true},
+			'RolGratis': {'img':'img/logo-rolgratis.png', 'link': 'http://rolgratis.org', 'adquirir': false},
+			'Summum Creator': {'img':'img/logo-summum.png', 'link': 'http://www.summumcreator.es', 'adquirir': false}
 		}
 	},
 
@@ -39,11 +39,12 @@ var ev_envenenado_app = {
 		// binding events
 		this.appendPanel();
 		document.addEventListener('deviceReady', this.onDeviceReady, false);
-	//	this.onDeviceReady();	// ésto es para que inicie la app al probar el index.html en un navegador de ordenador. quitar al final
+		this.onDeviceReady();	// activar esta línea para probar en navegador del PC
 	},
 	onDeviceReady: function () {
 		console.log('******** evento \'onDeviceReady\' lanzado');
 	//	new FastClick(document.body);
+		FastClick.attach(document.body);
 		ev_envenenado_app.portada();
 		ev_envenenado_app.pj();
 		ev_envenenado_app.dagaYTripulacion();
@@ -72,7 +73,7 @@ var ev_envenenado_app = {
 		ev_env_shuffle_array(patronesArray);
 		for (var i = 0; i < patronesArray.length; i++) {
 			patronesString	+=	patronesArray[i]
-			if (ev_envenenado_app.patrones.patrones[patronesArray[i]]) patronesString	+=	' (<a href="#" onclick="openLink(\'' + ev_envenenado_app.patrones.patrones[patronesArray[i]] + '\')" >'
+			if (ev_envenenado_app.patrones.patrones[patronesArray[i]]) patronesString	+=	' (<a href="#" onclick="ev_env_openLink(\'' + ev_envenenado_app.patrones.patrones[patronesArray[i]] + '\');" >'
 																						 +	ev_envenenado_app.patrones.patrones[patronesArray[i]]
 																						 +	'</a>)';
 			if (i < (patronesArray.length-2)) patronesString += ', ';
@@ -671,7 +672,7 @@ var ev_envenenado_app = {
 	},
 
 	randomMecenas: function () {
-		$(document).bind('pagecreate', '#ev-adquirir', function (event, data) {
+	//	$(document).bind('pagecreate', '#ev-adquirir', function (event, data) {
 			var mecenasArray = [];
 			var mecenasPortadaApoyoString = '';
 			var mecenasAdquirirString = '';
@@ -679,13 +680,13 @@ var ev_envenenado_app = {
 			ev_env_shuffle_array(mecenasArray);
 			for (var i = 0; i < mecenasArray.length; i++) {
 				// mecenas en portada y apoyo
-				mecenasPortadaApoyoString += '<a class="ui-link" href="' + ev_envenenado_app.mecenas.mecenas[mecenasArray[i]].link + '" >'
+				mecenasPortadaApoyoString += '<a class="ui-link" href="#" onclick="ev_env_openLink(\'' + ev_envenenado_app.mecenas.mecenas[mecenasArray[i]].link + '\')" >'
 										   + '<img src="' + ev_envenenado_app.mecenas.mecenas[mecenasArray[i]].img + '" class="portada-btn" title="' + mecenasArray[i] + '" alt="' + mecenasArray[i] + '">'
 										   + '</a>';
 				// mecenas en adquirir
 				if (ev_envenenado_app.mecenas.mecenas[mecenasArray[i]].adquirir) {
 					mecenasAdquirirString += '<div class="centrar btn-adquirir">'
-										   + '<a href="' + ev_envenenado_app.mecenas.mecenas[mecenasArray[i]].link + '" data-role="button" target="_blank">'
+										   + '<a href="#" onclick="ev_env_openLink(\'' + ev_envenenado_app.mecenas.mecenas[mecenasArray[i]].link + '\');" data-role="button" ">'
 										   + '<img src="' + ev_envenenado_app.mecenas.mecenas[mecenasArray[i]].img + '" title="' + mecenasArray[i] + '" alt="' + mecenasArray[i] + '"   />'
 										   + '</a>'
 										   + '</div>';
@@ -695,7 +696,7 @@ var ev_envenenado_app = {
 			document.getElementById('ev-envenenados-lista-mecenas-portada').innerHTML = mecenasPortadaApoyoString;
 			document.getElementById('ev-envenenados-lista-mecenas-adquirir').innerHTML = mecenasAdquirirString;
 			document.getElementById('ev-envenenados-lista-mecenas-apoyo').innerHTML = mecenasPortadaApoyoString;
-		});
+	//	});
 	}
 
 };
