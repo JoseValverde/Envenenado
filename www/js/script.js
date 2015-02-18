@@ -39,7 +39,7 @@ var ev_envenenado_app = {
 		// binding events
 		this.appendPanel();
 		document.addEventListener('deviceReady', this.onDeviceReady, false);
-		this.onDeviceReady();	// activar esta línea para probar en navegador del PC
+	//	this.onDeviceReady();	// activar esta línea para probar en navegador del PC
 	},
 	onDeviceReady: function () {
 		console.log('******** evento \'onDeviceReady\' lanzado');
