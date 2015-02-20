@@ -79,6 +79,36 @@ function ev_env_saveFile (name, file) {
 		window.LocalFileSystem.PERSISTENT,
 		1024 *1024,
 		function (fileSystem) {
+			fileSystem.root.getDirectory(
+				"download",
+				{create: true},
+				function (dirEntry) {
+					dirEntry.getFile(
+						name,
+						{create: true, exclusive: true},
+						function (fileEntry) {
+							fileEntry.createWriter(
+								function (writer) {
+									writer.write(file);
+									var url = fileEntry.toURL();
+									console.log(url + ' file creation succes');
+									alert('El personaje ha sido guardado en /download/' + name + '.');
+								}
+							);
+						}
+					);
+				}
+			);
+		},
+		function () {console.log('window.requestFileSystem failed');}
+	);
+}
+
+function ev_env_saveFile_bak (name, file) {
+	window.requestFileSystem(
+		window.LocalFileSystem.PERSISTENT,
+		1024 *1024,
+		function (fileSystem) {
 			fileSystem.root.getFile(
 				name,
 				{create: true},
@@ -86,8 +116,9 @@ function ev_env_saveFile (name, file) {
 					fileEntry.createWriter(
 						function (writer) {
 							writer.write(file);
-							console.log(name + ' file creation succes');
-							alert('Se ha creado el archivo ' + name + ' en la SDCARD.');
+							var url = fileEntry.toURL();
+							console.log(url + ' file creation succes');
+							alert('Se ha creado el archivo ' + url + '.');
 						}
 					);
 				},
