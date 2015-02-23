@@ -1,12 +1,19 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.ev.envenenado" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget		id="com.ev.envenenado"
+			version="0.0.1"
+			xmlns="http://www.w3.org/ns/widgets"
+			xmlns:cdv="http://cordova.apache.org/ns/1.0" >
+
     <name>Envenenado</name>
+    <icon	src="envenenado_ico.png" />
     <description>
-        A sample Apache Cordova application that responds to the deviceready event.
+        Generador de Personajes, barcos y enemigos para Envenenado.
     </description>
-    <author email="dev@cordova.apache.org" href="http://cordova.io">
-        Apache Cordova Team
+    <author		email="dev@cordova.apache.org"
+    			href="http://jagvalverde.com" >
+        Jose Valverde
     </author>
-    <content src="index.html" />
-    <access origin="*" />
+    <content		src="index.html" />
+    <access			origin="*" />
+
 </widget>
