@@ -40,7 +40,7 @@ p {font:1em; text-align:center; padding: 0 10px;}
 }
 
 /* PORTADA ----------------------------------------- */
-#logo-portada {background: url(../img/top-dark.png);background-repeat:repeat-x;background-position:bottom center;}
+#logo-portada {background: url(../img/top-dark.png);background-repeat:repeat-x;background-position:bottom left;}
 .img-ancho-completo-top {width:65%; margin: 3% 0 10% 0;}
 .img-ancho-completo {width:95%; margin: 10px 0;}
 .portada-btn {width:45%; margin: 5px;}
@@ -97,27 +97,54 @@ box-shadow: 0px 0px 10px 0px rgba(0,0,0,0);}
 .ui-footer .btn-pie a{font-size: 24px;}
 .ui-footer .btn-pie a:hover{background-color:#ffe4c6;color:#500000}
 /* responsive ----------------- */
-@media screen and (min-width: 375px) and (max-width: 8000px) {
+@media screen and (min-width: 375px) {
 .ui-panel {width: 282px;}
-.ui-content{ min-height: 800px;}
+}
 	
 }
 
-@media screen and (min-width: 625px) and (max-width: 8000px) {
+@media screen and (min-width: 625px) {
 .ui-content,.ui-footer, .ui-header {width: 640px;margin: 0 auto}
-.ui-content{ min-height: 1024px;}
-body{background-color:#fce7d0}
+body{background-color:#fce7d0;}
+}
+
+@media screen and (min-width: 1000px) {
+.ui-content,.ui-footer, .ui-header {width: 100%;margin: 0 auto}
+body{background-color:#fce7d0;font-size: 30px!important;}
+.ui-panel {width: 470px;}
+#body-general h2 {font-size: 4em; padding: 0 50px;}
+.ui-footer{height:80px;}
+	
+input, select, textarea, button, .ui-btn, option, label, .ev-double-checkbox {font-size: 1.6em!important;/*line-height: 1.3;*/}
+	
+.ui-btn.ui-checkbox-off::after, .ui-btn.ui-checkbox-on::after, .ui-btn.ui-radio-off::after, .ui-btn.ui-radio-on::after {
+    display: block;
+    height: 50px;
+    margin: -25px 10px 0;
+    width: 50px;
+}
+	
+.ev-double-checkbox-pecados-0, 
+.ev-double-checkbox-pecados-1, 
+.ev-double-checkbox-pecados-2, 
+.ev-double-checkbox-infortunios-0, 
+.ev-double-checkbox-infortunios-1, 
+.ev-double-checkbox-infortunios-2  { background-size: 50px 50px!important;  margin: 0px 10px 0!important;}
+
+.ev-double-checkbox {  padding-left: 80px!important;}
+	
+.ev-enemigos-dado-normal { width: 150px; height: 150px; background-size: 150px; }
+.ev-enemigos-dado-descartado {  width: 150px; height: 150px; background-size: 150px; }
 }
 
 /*AJUSTES A JQUERY --------------------------------------- */
 .ui-content {padding: 0;}
 .ui-btn-icon-notext.ui-btn-corner-all, .ui-btn-icon-notext.ui-corner-all {border: 0 none;}
 /* ---- */
-.ev-double-checkbox {padding-left: 30px;cursor: pointer;}
+.ev-double-checkbox {padding-left: 30px;cursor: pointer; }
 .ev-double-checkbox-pecados-0 { background: url('../img/double-checkbox_pecados_0.png') no-repeat; background-size: 18px 100%; }
 .ev-double-checkbox-pecados-1 { background: url('../img/double-checkbox_pecados_1.png') no-repeat; background-size: 18px 100%; }
 .ev-double-checkbox-pecados-2 { background: url('../img/double-checkbox_pecados_2.png') no-repeat; background-size: 18px 100%; }
 .ev-double-checkbox-infortunios-0 { background: url('../img/double-checkbox_pecados_0.png') no-repeat; background-size: 18px 100%; }
 .ev-double-checkbox-infortunios-1 { background: url('../img/double-checkbox_pecados_1.png') no-repeat; background-size: 18px 100%; }
 .ev-double-checkbox-infortunios-2 { background: url('../img/double-checkbox_infortunios_2.png') no-repeat; background-size: 18px 100%; }
-
