@@ -1,6 +1,5 @@
 
 
-
 function ev_env_XML (p) {
 	var v = null;
 	switch (p) {
@@ -71,7 +70,25 @@ function ev_env_PDF (p) {
 	}
 	console.dir(doc);
 	pdf_file = doc.output();
-	if (file_name) ev_env_saveFile(file_name, pdf_file);
+	if (file_name) ev_env_fileTransfer(file_name, pdf_file);
+
+}
+
+function ev_env_fileTransfer (fileName, file) {
+	var assetURL = 'data:application/pdf;base64,' + btoa(file);
+	var store = cordova.file.externalRootDirectory + 'download/';
+	if (device.platform != 'Android') var store = cordova.file.documentsDirectory;
+	window.resolveLocalFileSystemURL(store + fileName, function () {
+		alert('El archivo ya existe: ' + store + fileName);
+	}, function () {
+		var fileTransfer = new FileTransfer();
+		fileTransfer.download(assetURL, store + fileName, function (entry) {
+			console.log('save \'' + store + fileName + '\' file: success');
+			alert('Archivo guardado: ' + store + fileName);
+		}, function (err) {
+			console.log(err);
+		});
+	});
 }
 
 function ev_env_saveFile (name, file) {
@@ -149,7 +166,7 @@ function ev_env_pj_pdf (doc) {
 	doc.text(20, 29, 'Mi nombre es'); doc.setFontSize(20); doc.text(52, 29, pj.nombre + '.');
 	doc.setFontSize(14);
 	doc.setFontStyle('bold');
-	doc.text(20, 39, 'Soy un pirata y he aqu\xED mi confesi\xF3n:');
+	doc.text(20, 39, 'Soy un pirata y he aqu\xED mi confesi\xF3n: ');
 	doc.setFontStyle('normal');
 	var str = 'He servido como Contramaestre';
 	if (pj.segundoACargo) str += ', segundo a cargo';

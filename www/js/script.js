@@ -44,7 +44,7 @@ var ev_envenenado_app = {
 	onDeviceReady: function () {
 		console.log('******** evento \'onDeviceReady\' lanzado');
 	//	new FastClick(document.body);
-		FastClick.attach(document.body);
+	//	FastClick.attach(document.body);
 		ev_envenenado_app.portada();
 		ev_envenenado_app.pj();
 		ev_envenenado_app.dagaYTripulacion();
@@ -694,7 +694,7 @@ var ev_envenenado_app = {
 			}
 			//
 			document.getElementById('ev-envenenados-lista-mecenas-portada').innerHTML = mecenasPortadaApoyoString;
-			document.getElementById('ev-envenenados-lista-mecenas-adquirir').innerHTML = mecenasAdquirirString;
+		//	document.getElementById('ev-envenenados-lista-mecenas-adquirir').innerHTML = mecenasAdquirirString;
 			document.getElementById('ev-envenenados-lista-mecenas-apoyo').innerHTML = mecenasPortadaApoyoString;
 	//	});
 	}
