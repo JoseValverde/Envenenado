@@ -1,10 +1,10 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget		id="com.ev.envenenado"
-			version="0.0.5"
+			version="0.0.6"
 			xmlns="http://www.w3.org/ns/widgets"
 			xmlns:gap="http://cordova.apache.org/ns/1.0" >
 
-	<name>Envenenado</name>
+	<name>Generador PJ para Envenenado</name>
 	<icon	src="icon.png" />
 	<icon	src="57x57-ico.png"		gap:platform="ios"		width="57"	height="57" />
 	<icon	src="72x72-ico.png"		gap:platform="ios"		width="72"	height="72" />
